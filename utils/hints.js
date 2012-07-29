@@ -1,4 +1,4 @@
-$(Khan).bind("checkAnswer", function() {
+﻿$(Khan).bind("checkAnswer", function() {
 
     if (!$(".hint-box").data("free")) {
 
@@ -26,7 +26,7 @@ $(Khan).bind("newProblem", function() {
     $("#hint")
         .removeClass("green")
         .addClass("orange")
-        .val("I'd like a hint")
+        .val("我需要提示")
         .data("buttonText", false)
         .stop(true /* clear */, true /* jump */)
         .appendTo("#get-hint-button-container");

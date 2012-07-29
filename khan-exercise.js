@@ -1,4 +1,4 @@
-/* khan-exercise.js
+﻿/* khan-exercise.js
 
     The main entry point here is actually the loadScripts method which is defined
     as Khan.loadScripts and then evaluated around line 500.
@@ -212,12 +212,6 @@ var Khan = (function() {
     lastAction,
     attempts,
 
-    // Bug-hunting "undefined" attempt content
-    debugLogLog = ["start of log"],
-    debugLog = function(l) {
-        debugLogLog.push(l);
-    },
-
     guessLog,
     userActivityLog,
 
@@ -310,8 +304,7 @@ var Khan = (function() {
             "mean-and-median": ["stat"],
             "math-model": ["ast"],
             "simplify": ["math-model", "ast", "expr-helpers", "expr-normal-form", "steps-helpers"],
-            "congruency": ["angles", "interactive"],
-            "graphie-3d": ["graphie", "matrix"]
+            "congruency": ["angles", "interactive"]
         },
 
         warnTimeout: function() {
@@ -371,8 +364,6 @@ var Khan = (function() {
 
         // Populate this with modules
         Util: {
-            debugLog: debugLog,
-
             // http://burtleburtle.net/bob/hash/integer.html
             // This is also used as a PRNG in the V8 benchmark suite
             random: function() {
@@ -696,7 +687,7 @@ var Khan = (function() {
         },
 
         showSolutionButtonText: function() {
-            return hintsUsed ? "Show next step (" + hints.length + " left)" : "Show Solution";
+            return hintsUsed ? "下一個步驟 (還有" + hints.length + " 個步驟)" : "解題說明";
         }
 
     };
@@ -769,11 +760,7 @@ var Khan = (function() {
                     $.each(Khan.modules, function(src, mod) {
                         var name = mod.name;
                         if ($.fn[name + type]) {
-                            debugLog("running " + name + type);
                             elem[name + type](problem, info);
-                            debugLog("ran " + name + type);
-                        } else {
-                            debugLog("(" + name + type + " not a fn; src " + mod.src + ")");
                         }
                     });
                 });
@@ -881,7 +868,7 @@ var Khan = (function() {
         $("#check-answer-button")
             .removeAttr("disabled")
             .removeClass("buttonDisabled")
-            .val("Check Answer");
+            .val("驗證答案");
     }
 
     function disableCheckAnswer() {
@@ -929,14 +916,9 @@ var Khan = (function() {
     function loadAndRenderExercise(nextUserExercise) {
 
         setUserExercise(nextUserExercise);
-
-        var typeOverride = userExercise.problemType,
-            seedOverride = userExercise.seed;
-
         exerciseId = userExercise.exerciseModel.name;
         exerciseName = userExercise.exerciseModel.displayName;
         exerciseFile = userExercise.exerciseModel.fileName;
-
         // TODO(eater): remove this once all of the exercises in the datastore have filename properties
         if (exerciseFile == null || exerciseFile == "") {
             exerciseFile = exerciseId + ".html";
@@ -964,7 +946,7 @@ var Khan = (function() {
             }
 
             // Generate a new problem
-            makeProblem(typeOverride, seedOverride);
+            makeProblem();
 
         }
 
@@ -1037,7 +1019,6 @@ var Khan = (function() {
     }
 
     function makeProblem(id, seed) {
-        debugLog("start of makeProblem");
 
         // Enable scratchpad (unless the exercise explicitly disables it later)
         Khan.scratchpad.enable();
@@ -1086,12 +1067,8 @@ var Khan = (function() {
         // Find which exercise this problem is from
         exercise = problem.parents("div.exercise").eq(0);
 
-        debugLog("chose problem type and seed");
-
         // Work with a clone to avoid modifying the original
         problem = problem.clone();
-
-        debugLog("cloned problem");
 
         // problem has to be child of visible #workarea for MathJax metrics to all work right
         $("#workarea").append(problem);
@@ -1111,8 +1088,6 @@ var Khan = (function() {
         // Add any global exercise defined elements
         problem.prepend(exercise.children(":not(.problems)").clone().data("inherited", true));
 
-        debugLog("cloned global elements");
-
         // Apply templating
         var children = problem
             // var blocks append their contents to the parent
@@ -1125,16 +1100,12 @@ var Khan = (function() {
             // ignoring graphie and spin blocks
             .children("[class][class!='graphie'][class!='spin']").tmplApply({attribute: "class"});
 
-        debugLog("ran tmplApply to vars and main elements");
-
         // Finally we do any inheritance to the individual child blocks (such as problem, question, etc.)
         children.each(function() {
             // Apply while adding problem.children() to include
             // template definitions within problem scope
             $(this).find("[id]").add(children).tmplApply();
         });
-
-        debugLog("ran tmplApply to [id]");
 
         // Remove and store hints to delay running modules on it
         hints = problem.children(".hints").remove();
@@ -1144,14 +1115,10 @@ var Khan = (function() {
             $(".hint-box").remove();
         }
 
-        debugLog("removed hints from DOM");
-
         // Evaluate any inline script tags in this exercise's source
         $.each(exercise.data("script") || [], function(i, scriptContents) {
             $.globalEval(scriptContents);
         });
-
-        debugLog("evaled inline scripts");
 
         // ...and inline style tags.
         if (exercise.data("style")) {
@@ -1176,18 +1143,13 @@ var Khan = (function() {
             });
         }
 
-        debugLog("added inline styles");
-
         // Run the main method of any modules
         problem.runModules(problem, "Load");
-        debugLog("done with runModules Load");
         problem.runModules(problem);
-        debugLog("done with runModules");
 
-        if (typeof seed === "undefined" && shouldSkipProblem()) {
+        if (shouldSkipProblem()) {
             // If this is a duplicate problem we should skip, just generate
             // another problem of the same problem type but w/ a different seed.
-            debugLog("duplicate problem!");
             clearExistingProblem();
             nextSeed(1);
             return makeProblem();
@@ -1230,9 +1192,7 @@ var Khan = (function() {
         // if this fails then we will need to try generating another one.)
         guessLog = [];
         userActivityLog = [];
-        debugLog("decided on answer type " + answerType);
         validator = Khan.answerTypes[answerType](solutionarea, solution);
-        debugLog("validator created");
 
         // A working solution was generated
         if (validator) {
@@ -1255,7 +1215,6 @@ var Khan = (function() {
             });
         } else {
             // Making the problem failed, let's try again
-            debugLog("validator was falsey");
             problem.remove();
             makeProblem(id, randomSeed);
             return;
@@ -1823,7 +1782,7 @@ var Khan = (function() {
         attempts = 0;
         lastAction = (new Date).getTime();
 
-        $("#hint").val("I'd like a hint");
+        $("#hint").val("我需要提示");
 
         $(Khan).trigger("newProblem");
 
@@ -1965,10 +1924,10 @@ var Khan = (function() {
                 // The seed that was used for generating the problem
                 problem_type: problemID,
 
-                // Whether we're currently in review mode
+                // Whether we are currently in review mode
                 review_mode: (!testMode && Exercises.reviewMode) ? 1 : 0,
 
-                // Whether we are currently working on a topic, as opposed to an exercise
+                // Whether we are currently in topic mode
                 topic_mode: (!testMode && !Exercises.reviewMode && !Exercises.practiceMode) ? 1 : 0,
 
                 // Request camelCasing in returned response
@@ -1987,10 +1946,7 @@ var Khan = (function() {
                 cards_done: !testMode && Exercises.completeStack.length,
 
                 // How many cards the user has left to do
-                cards_left: !testMode && (Exercises.incompleteStack.length - 1),
-
-                //Get Custom Stack Id if it exists
-                custom_stack_id: !testMode && Exercises.completeStack.getCustomStackID()
+                cards_left: !testMode && (Exercises.incompleteStack.length - 1)
             };
         }
 
@@ -2022,7 +1978,7 @@ var Khan = (function() {
             if (pass !== true) {
                 checkAnswerButton
                     .effect("shake", {times: 3, distance: 5}, 80)
-                    .val("Try Again");
+                    .val("嗯...再試看看！");
 
                 // Is this a message to be shown?
                 if (typeof pass === "string") {
@@ -2054,7 +2010,6 @@ var Khan = (function() {
             // Save the problem results to the server
             var curTime = new Date().getTime();
             var data = buildAttemptData(pass, ++attempts, JSON.stringify(validator.guess), curTime);
-            debugLog("attempt " + JSON.stringify(data));
             request("problems/" + problemNum + "/attempt", data, function() {
 
                 // TODO: Save locally if offline
@@ -2143,23 +2098,21 @@ var Khan = (function() {
 
                 hintsUsed += 1;
 
-                var stepsLeft = hints.length + " step" + (hints.length === 1 ? "" : "s") + " left";
-                $(this).val($(this).data("buttonText") || "I'd like another hint (" + stepsLeft + ")");
+                var stepsLeft = "還有 " + hints.length + " 個提示";
+                $(this).val($(this).data("buttonText") || "下一個提示 (" + stepsLeft + ")");
 
                 var problem = $(hint).parent();
-								
-				// Append first so MathJax can sense the surrounding CSS context properly
-				$(hint).appendTo("#hintsarea").runModules(problem);
+
+                // Append first so MathJax can sense the surrounding CSS context properly
+                $(hint).appendTo("#hintsarea").runModules(problem);
 
                 // Grow the scratchpad to cover the new hint
                 Khan.scratchpad.resize();
 
-                // Disable the get hint button & add final_answer class
+                // Disable the get hint button
                 if (hints.length === 0) {
-                    $(hint).addClass("final_answer");
+                    $(Khan).trigger("allHintsUsed");
 
-					$(Khan).trigger("allHintsUsed");
-					
                     $(this).attr("disabled", true);
                 }
             }
@@ -2213,7 +2166,7 @@ var Khan = (function() {
             e.preventDefault();
 
             $("#issue").hide(500);
-            $("#issue-title, #issue-body").val("");
+            $("#issue-title, #issue-email, #issue-body").val("");
 
         });
 
@@ -2228,6 +2181,7 @@ var Khan = (function() {
             var pretitle = exerciseName,
                 type = $("input[name=issue-type]:checked").prop("id"),
                 title = $("#issue-title").val(),
+                email = $("#issue-email").val(),
                 path = exerciseFile + "?seed=" +
                     problemSeed + "&problem=" + problemID,
                 pathlink = "[" + path + (exercise.data("name") != null && exercise.data("name") !== exerciseId ? " (" + exercise.data("name") + ")" : "") + "](http://sandcastle.khanacademy.org/media/castles/Khan:master/exercises/" + path + "&debug)",
@@ -2237,7 +2191,7 @@ var Khan = (function() {
                     ("loaded, " + (MathJax.isReady ? "" : "NOT ") + "ready, queue length: " + MathJax.Hub.queue.queue.length)),
                 sessionStorageInfo = (typeof sessionStorage === "undefined" || typeof sessionStorage.getItem === "undefined" ? "sessionStorage NOT enabled" : null),
                 warningInfo = $("#warning-bar-content").text(),
-                parts = [$("#issue-body").val() || null, pathlink, historyLink, "    " + JSON.stringify(guessLog), agent, sessionStorageInfo, mathjaxInfo, warningInfo, debugLogLog.join("\n")],
+                parts = [email ? "Reporter: " + email : null, $("#issue-body").val() || null, pathlink, historyLink, "    " + JSON.stringify(guessLog), agent, sessionStorageInfo, mathjaxInfo, warningInfo],
                 body = $.grep(parts, function(e) { return e != null; }).join("\n\n");
 
             var mathjaxLoadFailures = $.map(MathJax.Ajax.loading, function(info, script) {

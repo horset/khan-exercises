@@ -1,4 +1,4 @@
-<!--
+﻿<!--
     TODO: eventually, this template can replace khan-exercises/exercises/khan-exercise.html,
     which is used in exercise test mode
 -->
@@ -19,13 +19,13 @@
     <div id="answer_area_wrap"><div id="answer_area">
         <form id="answerform" action="/exercisedashboard" method="get" name="answerform">
             <div id="answercontent" class="info-box fancy-scrollbar">
-                <a id="examples-show">Acceptable formats</a>
+                <a id="examples-show">輸入的格式</a>
                 <ul id="examples" style="display: none"></ul>
-                <span class="info-box-header">Answer</span>
+                <span class="info-box-header">請輸入答案</span>
                 <div id="solutionarea"></div>
                 <div class="answer-buttons">
-                    <input type="submit" class="simple-button green full-width" id="check-answer-button" value="Check Answer"/>
-                    <input type="button" class="simple-button green full-width" id="next-question-button" style="display:none;" name="correctnextbutton" value="Correct! Next Question..."/>
+                    <input type="submit" class="simple-button green full-width" id="check-answer-button" value="驗證答案"/>
+                    <input type="button" class="simple-button green full-width" id="next-question-button" style="display:none;" name="correctnextbutton" value="恭喜答對了！ 練習下一題"/>
                     <span id="show-solution-button-container"></span>
                     <div id="check-answer-results">
                         <img id="sad" style="display: none;"/>
@@ -40,9 +40,9 @@
                 <span class="info-box-sub-description">To work on problems like this, <a id="readonly-start" href="">start this exercise</a>.</span>
             </div>
             <div class="info-box hint-box">
-                <span class="info-box-header">Need help? Get a hint.</span>
+                <span class="info-box-header">給些提示！</span>
                 <div id="get-hint-button-container">
-                    <input id="hint" type="button" class="simple-button orange full-width" value="I'd like a hint" name="hint"/>
+                    <input id="hint" type="button" class="simple-button orange full-width" value="我需要提示" name="hint"/>
                 </div>
                 <span id="hint-remainder"></span>
             </div>
@@ -84,6 +84,7 @@
                     </ul>
                 </fieldset>
                 <label for="issue-title">Issue Title:<input type="text" name="issue-title" id="issue-title" /></label>
+                <label for="issue-email">Your Email (optional):<input type="text" name="issue-email" id="issue-email" /></label>
                 <label for="issue-body">Description of Issue:<textarea name="issue-body" id="issue-body"></textarea></label>
                 <input type="submit" class="simple-button" value="Submit Issue">
                 <a href="/#" id="issue-cancel">Cancel</a>
