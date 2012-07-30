@@ -1,4 +1,4 @@
-/* khan-exercise.js
+﻿/* khan-exercise.js
 
     The main entry point here is actually the loadScripts method which is defined
     as Khan.loadScripts and then evaluated around line 500.
@@ -696,7 +696,7 @@ var Khan = (function() {
         },
 
         showSolutionButtonText: function() {
-            return hintsUsed ? "Show next step (" + hints.length + " left)" : "Show Solution";
+            return hintsUsed ? "下一個步驟 (還有" + hints.length + " 個步驟)" : "解題說明";
         }
 
     };
@@ -881,7 +881,7 @@ var Khan = (function() {
         $("#check-answer-button")
             .removeAttr("disabled")
             .removeClass("buttonDisabled")
-            .val("Check Answer");
+            .val("驗證答案");
     }
 
     function disableCheckAnswer() {
@@ -1823,7 +1823,7 @@ var Khan = (function() {
         attempts = 0;
         lastAction = (new Date).getTime();
 
-        $("#hint").val("I'd like a hint");
+        $("#hint").val("我需要提示");
 
         $(Khan).trigger("newProblem");
 
@@ -2022,7 +2022,7 @@ var Khan = (function() {
             if (pass !== true) {
                 checkAnswerButton
                     .effect("shake", {times: 3, distance: 5}, 80)
-                    .val("Try Again");
+                    .val("嗯...再試看看！");
 
                 // Is this a message to be shown?
                 if (typeof pass === "string") {
@@ -2143,8 +2143,8 @@ var Khan = (function() {
 
                 hintsUsed += 1;
 
-                var stepsLeft = hints.length + " step" + (hints.length === 1 ? "" : "s") + " left";
-                $(this).val($(this).data("buttonText") || "I'd like another hint (" + stepsLeft + ")");
+                var stepsLeft = "還有 " + hints.length + " 個提示";
+                $(this).val($(this).data("buttonText") || "下一個提示 (" + stepsLeft + ")");
 
                 var problem = $(hint).parent();
 								
