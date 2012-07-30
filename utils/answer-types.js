@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
 
 var inexactMessages = {
     unsimplified: "Your answer is almost correct, but it needs to be simplified.",
@@ -79,7 +79,7 @@ $.extend(Khan.answerTypes, {
             }
             return result;
         };
-        verifier.examples = "An equation of a line, like 3(x+1)/2 or 2x + 1";
+        verifier.examples = "線性方程式，例： 3(x+1)/2 or 2x + 1";
         return Khan.answerTypes.text(solutionarea, solution, fallback, verifier);
 
     },
@@ -142,7 +142,7 @@ $.extend(Khan.answerTypes, {
                 transformer: function(text) {
                     return forms.decimal.transformer(text);
                 },
-                example: "an integer, like <code>6</code>"
+                example: "整數，例：<code>6</code>"
             },
 
             proper: {
@@ -157,9 +157,9 @@ $.extend(Khan.answerTypes, {
                 },
                 example: (function() {
                     if (options.simplify === "optional") {
-                        return "a <em>proper</em> fraction, like <code>1/2</code> or <code>6/10</code>";
+                        return "<em>真</em>分數，例：<code>1/2</code> 或 <code>6/10</code>";
                     } else {
-                        return "a <em>simplified proper</em> fraction, like <code>3/5</code>";
+                        return "真分數的<em>最簡</em>分數，例：<code>3/5</code>";
                     }
                 })()
             },
@@ -176,9 +176,9 @@ $.extend(Khan.answerTypes, {
                 },
                 example: (function() {
                     if (options.simplify === "optional") {
-                        return "an <em>improper</em> fraction, like <code>10/7</code> or <code>14/8</code>";
+                        return "<em>假</em>分數，例：<code>10/7</code> 或 <code>14/8</code>";
                     } else {
-                        return "a <em>simplified improper</em> fraction, like <code>7/4</code>";
+                        return "假分數的<em>最簡</em>分數，例：<code>7/4</code>";
                     }
                 })()
             },
@@ -263,7 +263,7 @@ $.extend(Khan.answerTypes, {
                     });
                     return transformed;
                 },
-                example: "a percent, like <code>12.34\\%</code>"
+                example: "百分比，例：<code>12.34\\%</code>"
             },
 
             dollar: {
@@ -272,7 +272,7 @@ $.extend(Khan.answerTypes, {
 
                     return forms.decimal.transformer(text);
                 },
-                example: "a money amount, like <code>$2.75</code>"
+                example: "金額表示：例：<code>$2.75</code>"
             },
 
             mixed: {
@@ -302,7 +302,7 @@ $.extend(Khan.answerTypes, {
 
                     return [];
                 },
-                example: "a mixed number, like <code>1\\ 3/4</code>"
+                example: "混合數，例：<code>1\\ 3/4</code>"
             },
 
             decimal: {
@@ -344,9 +344,9 @@ $.extend(Khan.answerTypes, {
                 },
                 example: (function() {
                     if (options.inexact === undefined) {
-                        return "an <em>exact</em> decimal, like <code>0.75</code>";
+                        return "小數，例：<code>0.75</code>";
                     } else {
-                        return "a decimal, like <code>0.75</code>";
+                        return "小數，例：<code>0.75</code>";
                     }
                 })()
             }
