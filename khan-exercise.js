@@ -916,14 +916,9 @@ var Khan = (function() {
     function loadAndRenderExercise(nextUserExercise) {
 
         setUserExercise(nextUserExercise);
-
-        var typeOverride = userExercise.problemType,
-            seedOverride = userExercise.seed;
-
         exerciseId = userExercise.exerciseModel.name;
         exerciseName = userExercise.exerciseModel.displayName;
         exerciseFile = userExercise.exerciseModel.fileName;
-
         // TODO(eater): remove this once all of the exercises in the datastore have filename properties
         if (exerciseFile == null || exerciseFile == "") {
             exerciseFile = exerciseId + ".html";
@@ -951,7 +946,7 @@ var Khan = (function() {
             }
 
             // Generate a new problem
-            makeProblem(typeOverride, seedOverride);
+            makeProblem();
 
         }
 
@@ -1951,10 +1946,7 @@ var Khan = (function() {
                 cards_done: !testMode && Exercises.completeStack.length,
 
                 // How many cards the user has left to do
-                cards_left: !testMode && (Exercises.incompleteStack.length - 1),
-
-                //Get Custom Stack Id if it exists
-                custom_stack_id: !testMode && Exercises.completeStack.getCustomStackID()
+                cards_left: !testMode && (Exercises.incompleteStack.length - 1)
             };
         }
 
@@ -2119,10 +2111,8 @@ var Khan = (function() {
 
                 // Disable the get hint button
                 if (hints.length === 0) {
-                    $(hint).addClass("final_answer");
+                    $(Khan).trigger("allHintsUsed");
 
-					$(Khan).trigger("allHintsUsed");
-					
                     $(this).attr("disabled", true);
                 }
             }
