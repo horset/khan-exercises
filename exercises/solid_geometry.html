@@ -2,7 +2,7 @@
 <html data-require="math graphie graphie-3d math-format interactive">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Solid geometry</title>
+    <title>立體幾何Solid geometry</title>
     <script src="../khan-exercise.js"></script>
     <script type="text/javascript">
         var makeSquare = function(left, width, bottom, height, color) {
@@ -82,8 +82,8 @@
             </div>
 
             <p class="question">
-                What is the volume of this object?
-                Drag on the object to rotate it.
+                這個物體的體積是多大呢？What is the volume of this object?
+                在這個物體上面拖曳來轉動它。Drag on the object to rotate it.
             </p>
             <div class="problem">
                 <div class="graphie">
@@ -152,14 +152,15 @@
             </div>
 
             <div class="hints">
-                <p>The volume of a prism is the area of the base
-                    <code>\times</code> depth.</p>
-                <p>In this object, one of the triangles is the base.</p>
-                <p>We know the area of a triangle is
-                    <code>\frac{1}{2}\ \text{base} \times \text{height}</code>.
+                <p>角柱的體積是底部面積The volume of a prism is the area of the base
+                    <code>\times</code> 深depth.</p>
+                <p>在這個物體當中，底部即是其中一個三角形。In this object, one of the triangles is the base.</p>
+                <p>我們知道一個三角形的面積是We know the area of a triangle is
+                    <code>\frac{1}{2}\ \text{底base} \times \text{高height}</code>.
                 </p>
                 <div>
-                    <p>Orient the triangle like this, and find the
+                    <p>將三角形轉成像這樣，就可以找到這個物體的底跟高：
+                    Orient the triangle like this, and find the
                         base and height from the object:</p>
                     <div class="graphie" id="triangle">
                         init({ range: [[-2, 2], [-1.2, 1.2]], scale: [100, 100] });
@@ -176,8 +177,8 @@
                 </div>
                 <div>
                     <p>
-                        From the object, we find that the base of the triangle
-                        is <code><var>BASE</var></code> and the height is
+                        我們可以從這個物體發現這個三角形的底是From the object, we find that the base of the triangle
+                        is <code><var>BASE</var></code> 跟高是and the height is
                         <code><var>HEIGHT</var></code>.
                     </p>
                     <div class="graphie" data-update="triangle">
@@ -189,16 +190,16 @@
                     </div>
                 </div>
                 <p>
-                    The area of the triangle is then
+                    然後這個三角形的面積是The area of the triangle is then
                     <code>\frac{1}{2}<var>BASE</var> \times <var>HEIGHT</var>
                         = <var>BASE * HEIGHT / 2</var></code>.
                 </p>
                 <p>
-                    From the object, we can then find that the depth is
+                    然後我們可以從這個物體發現它的深是From the object, we can then find that the depth is
                     <code><var>DEPTH</var></code>.
                 </p>
                 <p>
-                    Then, the final volume is
+                    所以最後可以算出這個物體的體積是Then, the final volume is
                     <code><var>BASE * HEIGHT / 2</var> \times <var>DEPTH</var>
                         = <var>BASE * HEIGHT * DEPTH / 2</var>.</code>
                 </p>
@@ -259,7 +260,7 @@
             </div>
 
             <p class="question">
-                What is the volume of this box? Drag on the box to rotate it.
+                這個盒子的體積多大？在這個盒子上拖曳來轉動它。What is the volume of this box? Drag on the box to rotate it.
             </p>
 
             <div class="solution">
@@ -267,16 +268,16 @@
             </div>
 
             <div class="hints">
-                <p>The volume of a box is the
+                <p>盒子的體積是它的長The volume of a box is the
                     length <code>\times</code>
-                    width <code>\times</code>
-                    height.</p>
-                <p>From the figure, we can find that the
+                    寬width <code>\times</code>
+                    高height.</p>
+                <p>透過這張圖我們可以發現邊長分別是From the figure, we can find that the
                     lengths of the sides are
-                    <code><var>LENGTH</var></code>,
-                    <code><var>WIDTH</var></code>,
-                    and <code><var>HEIGHT</var></code>.</p>
-                <p>To find the volume, we just multiply
+                    <code><var>LENGTH</var></code>、
+                    <code><var>WIDTH</var></code>、
+                    跟and <code><var>HEIGHT</var></code>.</p>
+                <p>為了要知道它的體積，我們直接將它的各邊互乘。To find the volume, we just multiply
                     these side lengths together.</p>
                 <p>
                     <code><var>LENGTH</var> \times
@@ -286,15 +287,15 @@
                 <p>
                     <code>\qquad= <var>LENGTH * WIDTH * HEIGHT</var></code>
                 </p>
-                <p>Thus, the volume of the box is
+                <p>所以這個盒子的體積是Thus, the volume of the box is
                     <code><var>LENGTH * WIDTH * HEIGHT</var></code>.</p>
             </div>
         </div>
 
         <div id="int-box-T" data-type="int-box-V">
             <p class="question">
-                What is the surface area of this box?
-                Drag on the box to rotate it.
+                這個盒子的面積多大？What is the surface area of this box?
+                在這個盒子上拖曳來旋轉它。Drag on the box to rotate it.
             </p>
 
             <div class="solution">
@@ -304,10 +305,10 @@
             </div>
 
             <div class="hints">
-                <p>To find the surface area, find the areas
+                <p>為了要知道它的表面積，我們先找出各面的面積，然後將各面的面積相加。To find the surface area, find the areas
                 of each of the faces, and add all the areas up.</p>
                 <div>
-                    <p>To see this better, let's try unwrapping the box:
+                    <p>為了更容易了解，讓我們試著把盒子打開：To see this better, let's try unwrapping the box:
                     <input type="submit" value="Unwrap!"
                         onclick="KhanUtil.tmpl.getVAR('UNWRAPGRAPH.unwrap()')"
                     /></p>
@@ -450,7 +451,7 @@
                 </div>
                 <div id="unwrapped" data-unwrap>
                     <div>
-                        <p>We can group the faces together
+                        <p>我們可以用大小跟顏色將這些面分組：We can group the faces together
                             based on size and color:</p>
                         <div class="graphie">
                             var width = WIDTH + 2 + LENGTH + 2 + HEIGHT + 2;
@@ -481,7 +482,7 @@
                         </div>
                     </div>
                     <div>
-                        <p>We can calculate the area of each
+                        <p>現在我們可以計算每一塊的面積：We can calculate the area of each
                             of the pieces now:</p>
                         <code>
                             2 \left(<var>WIDTH</var> \times
@@ -506,7 +507,7 @@
                     </code>
                     </p>
                     <p>
-                        Thus, the total surface area of the box is
+                        所以，這個盒子的全部表面積是Thus, the total surface area of the box is
                         <code><var>2 * WIDTH * HEIGHT +
                                 2 * LENGTH * WIDTH +
                                 2 * HEIGHT * LENGTH</var></code>.
@@ -523,18 +524,18 @@
             </div>
 
             <p class="question">
-                What is the volume of this cube? Drag on the cube to rotate it.
+                這個正方體的體積多大？在方體上拖曳來旋轉它。What is the volume of this cube? Drag on the cube to rotate it.
             </p>
 
             <div class="hints">
-                <p>The volume of a box is the
-                    length <code>\times</code>
-                    width <code>\times</code>
-                    height.</p>
-                <p>Since this is a cube, all the sides are the same length.</p>
-                <p>From the figure, we can find that the side length is
+                <p>一個盒子的體積是The volume of a box is the
+                    長length <code>\times</code>
+                    寬width <code>\times</code>
+                    高height.</p>
+                <p>因為這是一個正方體，所以各邊的長度都一樣。Since this is a cube, all the sides are the same length.</p>
+                <p>透過這張圖，我們可以發現邊長是From the figure, we can find that the side length is
                     <code><var>WIDTH</var></code>.</p>
-                <p>To find the volume, we just cube this side length.</p>
+                <p>為了要了解它的體積，我們只要將邊長做立方運算就可以了To find the volume, we just cube this side length.</p>
                 <p>
                     <code><var>WIDTH</var>^3 =
                         <var>WIDTH</var> \times
@@ -544,7 +545,7 @@
                 <p>
                     <code>\qquad= <var>WIDTH * WIDTH * WIDTH</var></code>
                 </p>
-                <p>Thus, the volume of the cube is
+                <p>所以這個正方體的體積是Thus, the volume of the cube is
                     <code><var>WIDTH * WIDTH * WIDTH</var></code>.</p>
             </div>
         </div>
@@ -557,13 +558,13 @@
             </div>
 
             <p class="question">
-                What is the surface area of this cube?
-                Drag on the cube to rotate it.
+                這個正方體的表面積多大？What is the surface area of this cube?
+                在這個正方體上拖曳來旋轉它Drag on the cube to rotate it.
             </p>
 
             <div class="hints" data-apply="appendContents">
                 <div id="unwrapped" data-unwrap>
-                    <p>Here, we can see that all of the
+                    <p>在這邊，我們可以看到六邊全部都是相同大小。Here, we can see that all of the
                         six sides have the same size.</p>
                     <div>
                         <div class="graphie">
@@ -582,7 +583,7 @@
                         </div>
                     </div>
                     <div>
-                        <p>We can now calculate the total area:</p>
+                        <p>我們現在可以計算出總面積：We can now calculate the total area:</p>
                         <code>6 \left(<var>WIDTH</var> \times
                             <var>WIDTH</var>\right)</code>
                     </div>
@@ -593,7 +594,7 @@
                         <code>\qquad= <var>6 * WIDTH * WIDTH</var></code>
                     </p>
                     <p>
-                        Thus, the total surface area of the cube is
+                        所以，這個正方體的總表面積是Thus, the total surface area of the cube is
                         <code><var>6 * WIDTH * WIDTH</var></code>.
                     </p>
                 </div>
@@ -607,9 +608,9 @@
             </div>
 
             <div class="question">
-                <p>What is the volume of a cylinder with base radius
-                    <code><var>r</var></code> and height
-                    <code><var>h</var></code>?</p>
+                <p>What is the volume of a cylinder with base radius底部半徑為
+                    <code><var>r</var></code> and 且高為
+                    <code><var>h</var></code> 的圓柱體體積為多少？</p>
 
                 <div class="graphie">
                     init({
@@ -642,12 +643,12 @@
 
             <div class="hints">
                 <p>
-                    The area of the base is simply the area of a circle:
+                    The area of the base is simply the area of a circle:底部的面積就是圓形的面積：
                     <code>\pi r^2 = \pi \cdot <var>r</var>^2 =
                         <var>r * r</var> \pi</code>.
                 </p>
                 <p>
-                    The volume of the cylinder is the area of the base
+                    圓柱體的體積是底部面積乘以高：The volume of the cylinder is the area of the base
                     times the height:
                     <code>B \cdot h = <var>r * r</var>\pi \cdot <var>h</var>
                         = <var>r * r * h</var>\pi</code>.
@@ -663,8 +664,8 @@
 
             <div class="question">
                 <p>What is the surface area of a cylinder with
-                    base radius <code><var>r</var></code> and
-                    height <code><var>h</var></code>?</p>
+                    base radius底部半徑為 <code><var>r</var></code> and
+                    height且高為 <code><var>h</var></code> 的圓柱體表面積是多少？</p>
 
                 <div class="graphie">
                     init({
@@ -697,29 +698,29 @@
 
             <div class="hints">
                 <p>
-                    The areas of the top and the base are simply the
+                    頂部與底部的面積就是圓形的面積The areas of the top and the base are simply the
                     area of a circle:
                     <code>\pi r^2 = \pi \cdot <var>r</var>^2 =
                         <var>r * r</var> \pi</code>.
                 </p>
                 <p>
-                    The lateral surface area is the same as the
+                    側面的表面積也跟高為The lateral surface area is the same as the
                     area of a rectangle with height
                     <code><var>h</var></code>
-                    and width equal to the circumference of the base.
+                    及寬度與底部圓周同寬的四方形面積一樣and width equal to the circumference of the base.
                 </p>
                 <p>
-                    That circumference is
+                    圓周是That circumference is
                     <code>2 \pi r = 2\pi \cdot <var>r</var> =
                         <var>2 * r</var>\pi</code>.
                 </p>
                 <p>
-                    Thus, the lateral surface area is
+                    所以，它的側面表面積是Thus, the lateral surface area is
                     <code>wh = <var>2 * r</var> \pi \cdot <var>h</var> =
                         <var>2 * r * h</var> \pi</code>.
                 </p>
                 <p>
-                    The total surface area is
+                    總表面積即是The total surface area is
                     <code><var>r * r</var> \pi + <var>r * r</var> \pi +
                         <var>2 * r * h</var> \pi =
                         <var>2 * r * ( r + h )</var>\pi</code>.
