@@ -2,7 +2,7 @@
 <html data-require="math word-problems">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>簡化分數Simplifying fractions</title>
+    <title>簡化分數</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -33,16 +33,16 @@
 
         <div class="problems">
             <div>
-                <p class="problem">簡化至最簡分數Simplify to lowest terms.</p>
+                <p class="problem">簡化至最簡分數。</p>
                 <p class="question"><code>\dfrac{<var>NUM</var>}{<var>DENOM</var>}</code></p>
                 <p class="solution" data-type="rational"><var>NUM / DENOM</var></p>
             </div>
         </div>
 
         <div class="hints">
-            <p data-if="GCD_FACTORS.length !== 1">有幾種方法能解這個問題。There are several ways to tackle this problem.</p>
+            <p data-if="GCD_FACTORS.length !== 1">有幾種方法能解決這個問題。</p>
 
-            <p>What is the greatest common factor (GCD) of <var>NUM</var> 和 <var>DENOM</var> 的最大公因數 (GCD) 是多少？</p>
+            <p> <var>NUM</var> 和 <var>DENOM</var> 的最大公因數（GCD）是多少？</p>
 
             <p><code><var>NUM</var>   = <var>getPrimeFactorization( NUM   ).join( "\\cdot" )</var></code><br />
                <code><var>DENOM</var> = <var>getPrimeFactorization( DENOM ).join( "\\cdot" )</var></code></p>
@@ -68,7 +68,7 @@
                 = \dfrac{<var>NUM / GCD</var>}{<var>DENOM / GCD</var>}</code>
             </p>
             <div data-if="GCD_FACTORS.length !== 1" data-unwrap>
-                <p>!!!你也可以用重複同除分母與分子至公因數You can also solve this problem by repeatedly breaking the numerator and denominator into common factors.</p>
+                <p>你也可以透過將分母與分子重複拆解至公因數的方式來解決這個問題。</p>
                 <div>
                     <p>例如：</p>
                     <p><code><var>HINT</var></code></p>
