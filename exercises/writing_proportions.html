@@ -27,7 +27,7 @@
                 <var id="IDX">randRange( 0, SOLUTIONS.length - 1 )</var>
                 <var id="SOLUTION">SOLUTIONS[ IDX ]</var>
             </div>
-            <p class="problem"><var>plural( N1, deskItem( 0 ) )</var> 價值 $<var>C</var>.</p>
+            <p class="problem"><var>plural( N1, deskItem( 0 ) )</var> 價值 $<var>C</var> 。</p>
             <p class="question">哪一個等式可以幫助我們了解 <var>plural( N2, deskItem( 0 ) )</var> 的總價格？</p>
             <p class="solution"><code><var>SOLUTION</var></code></p>
             <ul class="choices" data-none="true" data-show="5">
@@ -43,31 +43,31 @@
                 <div data-if="IDX === 0" data-unwrap>
                     <p>我們可以把 <var>plural( N1, deskItem( 0 ) )</var> 價值 $<var>C</var> 寫成比值：</p>
                     <p><code>\dfrac{<var>N1</var>}{\$<var>C</var>}</code></p>
-                    <p>用 <code>x</code> 表示 <var>plural( N2, deskItem( 0 ) )</var> 未知的總價格。因為 <var>plural( N2, deskItem( 0 ) )</var> 總價格為 <code>x</code>，所以我們可以得到下列比值：</p>
+                    <p>用 <code>x</code> 表示 <var>plural( N2, deskItem( 0 ) )</var> 未知的總價格。因為 <var>plural( N2, deskItem( 0 ) )</var> 總價格為 <code>x</code>，所以我們可以得到下面的比值：</p>
                     <p><code>\dfrac{<var>N2</var>}{x}</code></p>
-                    <p>總價格會隨著 <var>deskItem( 0 )</var> 的購買數量而改變，所以兩個比值是相等的。</p>
+                    <p>而總價格會隨著 <var>deskItem( 0 )</var> 的購買數量而改變，所以兩個比值是相等的。</p>
                 </div>
 
                 <div data-if="IDX === 1" data-unwrap>
-                    <p>用 <code>x</code> 表示 <var>plural( N2, deskItem( 0 ) )</var> 未知的總價格。因為 <var>plural( N2, deskItem( 0 ) )</var> 總價格為 <code>x</code>，所以我們可以得到下列比值：</p>
+                    <p>用 <code>x</code> 表示 <var>plural( N2, deskItem( 0 ) )</var> 未知的總價格。因為 <var>plural( N2, deskItem( 0 ) )</var> 總價格為 <code>x</code>，所以我們可以得到下面的比值：</p>
                     <p><code>\dfrac{<var>N2</var>}{x}</code></p>
                     <p>我們可以把 <var>plural( N1, deskItem( 0 ) )</var> 價值 $<var>C</var> 寫成比值：</p>
                     <p><code>\dfrac{<var>N1</var>}{\$<var>C</var>}</code></p>
-                    <p>總價格會隨著 <var>deskItem( 0 )</var> 的購買數量而改變，所以兩個比值是相等的。</p>
+                    <p>而總價格會隨著 <var>deskItem( 0 )</var> 的購買數量而改變，所以兩個比值是相等的。</p>
                 </div>
 
                 <div data-if="IDX === 2" data-unwrap>
-                    <p>我們知道 <var>plural( N1, deskItem( 0 ) )</var> 的總價格，然後我們想要知道 <var>plural( N2, deskItem( 0 ) )</var> 的總價格。我們可以將 <var>deskItem( 0 )</var> 的數量寫成比值： We can write the numbers of <var>deskItem( 0 )</var>s as a proportion:</p>
+                    <p>我們已經知道 <var>plural( N1, deskItem( 0 ) )</var> 的總價格，而我們想要知道 <var>plural( N2, deskItem( 0 ) )</var> 的總價格。我們可以把 <var>deskItem( 0 )</var> 的數量寫成比值：</p>
                     <p><code>\dfrac{<var>N1</var>}{<var>N2</var>}</code></p>
-                    <p>我們知道 <var>plural( N1, deskItem( 0 ) )</var> 價值 $<var>C</var>，然後我們可以用 <code>x</code> 表示 <var>plural( N2, deskItem( 0 ) )</var> 未知的總價格。這些總價格的比值可以可以表示成：</p>
+                    <p>我們知道 <var>plural( N1, deskItem( 0 ) )</var> 價值 $<var>C</var>，然後我們用 <code>x</code> 表示 <var>plural( N2, deskItem( 0 ) )</var> 未知的總價格。這些總價格的比值可以表示成：</p>
                     <p><code>\dfrac{\$<var>C</var>}{x}</code></p>
-                    <p>總價格會隨著 <var>deskItem( 0 )</var> 的購買數量而改變，所以兩個比值是相等的。</p>
+                    <p>而總價格會隨著 <var>deskItem( 0 )</var> 的購買數量而改變，所以兩個比值是相等的。</p>
                 </div>
 
                 <div data-if="IDX === 3" data-unwrap>
                     <p>如果我們用 <code>x</code> 表示 <var>plural( N2, deskItem( 0 ) )</var> 的總價格，我們就會得到下列比值：</p>
                     <p><code>\dfrac{x}{<var>N2</var>}</code></p>
-                    <p>我們需要付 $<var>C</var> 來買 <var>plural( N1, deskItem( 0 ) )</var>，可以將其寫成比值：</p>
+                    <p>我們需要付 $<var>C</var> 來買 <var>plural( N1, deskItem( 0 ) )</var>，可以把它寫成比值：</p>
                     <p><code>\dfrac{\$<var>C</var>}{<var>N1</var>}</code></p>
                     <p>因為每個 folder 的價格都一樣，所以這兩個比值是相等的。</p>
                 </div>
