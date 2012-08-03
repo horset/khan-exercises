@@ -225,7 +225,7 @@ $.extend(Khan.answerTypes, {
                     });
                     return possibilities;
                 },
-                example: "a multiple of pi, like <code>12\\ \\text{pi}</code> or <code>2/3\\ \\text{pi}</code>"
+                example: "pi 的倍數，例如 <code>12\\ \\text{pi}</code> 或 <code>2/3\\ \\text{pi}</code>"
             },
 
             // simple log(c) form
@@ -856,7 +856,7 @@ $.extend(Khan.answerTypes, {
         }
 
         if (showNone) {
-            var none = $("<span>None of the above.</span>");
+            var none = $("<span>以上皆非</span>");
 
             if (noneIsCorrect) {
                 none.data("correct", true);
