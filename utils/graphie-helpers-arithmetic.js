@@ -115,7 +115,7 @@ function Adder(a, b, digitsA, digitsB) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.09, 0.06]);
             });
         }
-        this.showSideLabel("\\text{Make sure the decimals are lined up.}");
+        this.showSideLabel("\\text{請先確定小數點有對齊喔!}");
     }
 }
 
@@ -257,7 +257,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.09, 0.06]);
             });
         }
-        this.showSideLabel("\\text{Make sure the decimals are lined up.}");
+        this.showSideLabel("\\text{請先確定小數點有對齊喔!}");
     };
 }
 
