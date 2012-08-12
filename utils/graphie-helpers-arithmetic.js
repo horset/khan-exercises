@@ -115,7 +115,7 @@ function Adder(a, b, digitsA, digitsB) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.09, 0.06]);
             });
         }
-        this.showSideLabel("\\text{�Х��T�w�p���I�������!}");
+        this.showSideLabel("\\text{Ω–•˝ΩT©w§pº∆¬I¶≥πÔªÙ≥·!}");
     }
 }
 
@@ -257,7 +257,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.09, 0.06]);
             });
         }
-        this.showSideLabel("\\text{�Х��T�w�p���I�������!}");
+        this.showSideLabel("\\text{Ω–•˝ΩT©w§pº∆¬I¶≥πÔªÙ≥·!}");
     };
 }
 
@@ -514,12 +514,12 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
         var x = -maxNumDigits;
         var y = -digitsB.length * digitsA.length;
         graph.label([x, y + 2],
-            "\\text{The top number has " + KhanUtil.plural(deciA, "digit") + " to the right of the decimal.}", "right");
+            "\\text{上面的數字，小數點右邊有 " + KhanUtil.plural(deciA, "位數") + "}", "right");
         graph.label([x, y + 1],
-            "\\text{The bottom number has " + KhanUtil.plural(deciB, "digit") + " to the right of the decimal.}", "right");
+            "\\text{下面的數字，小數點右邊有 " + KhanUtil.plural(deciB, "位數") + "}", "right");
         graph.label([x, y],
-            "\\text{The product has " + deciA + " + " + deciB + " = " + (deciA + deciB)
-             + " digits to the right of the decimal.}", "right");
+            "\\text{所以這兩個數字的乘積在小數點右邊有 " + deciA + " + " + deciB + " = " + (deciA + deciB)
+             + " 位數}", "right");
         graph.style({
             fill: "#000"
         }, function() {
