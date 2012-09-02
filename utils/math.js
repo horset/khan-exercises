@@ -1,4 +1,4 @@
-$.extend(KhanUtil, {
+﻿$.extend(KhanUtil, {
 
     // Simplify formulas before display
     cleanMath: function(expr) {
@@ -58,8 +58,8 @@ $.extend(KhanUtil, {
         return digits;
     },
 
-    placesLeftOfDecimal: ["one", "ten", "hundred", "thousand"],
-    placesRightOfDecimal: ["one", "tenth", "hundredth", "thousandth"],
+    placesLeftOfDecimal: ["個位數", "十位數", "百位數", "千位數"],
+    placesRightOfDecimal: ["個位數", "十分位", "百分位", "千分位"],
 
     powerToPlace: function(power) {
         if (power < 0) {

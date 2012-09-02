@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
     var getSubHints = function(id, title, subHints) {
         var str = "[<a href='#' class='show-subhint' data-subhint='" + id + "'>" + title + "</a>]</p>";
         str += "<div class='subhint' id='" + id + "'>";
@@ -12,7 +12,7 @@
     $("a.show-subhint").live("click", function(event) {
         var subhint = $("#" + $(this).data("subhint"));
         var visibleText = $(this).data("visible-text") || $(this).text();
-        var hiddenText = $(this).data("hidden-text") || "Hide explanation";
+        var hiddenText = $(this).data("hidden-text") || "隱藏解釋";
         $(this).data({ "visible-text": visibleText, "hidden-text": hiddenText });
 
         if (subhint.is(":visible")) {

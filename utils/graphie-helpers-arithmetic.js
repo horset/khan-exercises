@@ -115,7 +115,7 @@ function Adder(a, b, digitsA, digitsB) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.09, 0.06]);
             });
         }
-        this.showSideLabel("\\text{Ω–•˝ΩT©w§pº∆¬I¶≥πÔªÙ≥·!}");
+        this.showSideLabel("\\text{請先確定小數點有對齊喔!}");
     }
 }
 
@@ -257,7 +257,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.09, 0.06]);
             });
         }
-        this.showSideLabel("\\text{Ω–•˝ΩT©w§pº∆¬I¶≥πÔªÙ≥·!}");
+        this.showSideLabel("\\text{請先確定小數點有對齊喔!}");
     };
 }
 
@@ -597,9 +597,9 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             highlights = highlights.concat(drawDigits(totalDigits, index - totalDigits.length + 1, -2 * index, KhanUtil.BLUE));
 
             graph.label([digitsDividend.length + 0.5, -2 * index],
-                "\\text{How many times does }"
+                "\\text{需要多少個 }"
                 + divisor
-                + "\\text{ go into }"
+                + "\\text{ 才會變成 }"
                 + "\\color{#6495ED}{" + total + "}"
                 + "\\text{?}", "right");
 
