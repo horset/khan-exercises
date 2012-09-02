@@ -2,7 +2,7 @@
 <html data-require="math math-format expressions graphie">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Point slope form</title>
+    <title>點斜式</title>
     <script src="../khan-exercise.js"></script>
     <style type="text/css">
     #answer_area input[type=text] {
@@ -21,7 +21,7 @@
                     <var id="Y2">randRangeNonZero( -5, 5 )</var>
                     <var id="SLOPE">(Y1 - Y2) / (X1 - X2)</var>
                 </div>
-                <p class="problem">Using the following values, create an equation in point slope form.  In other words, given the values below, for a formula that looks like <code>(y - y_{1}) = m(x - x_{1})</code>, what are the values of <code>x_{1}</code>, <code>y_{1}</code>, and <code>m</code>?</p>
+                <p class="problem">用後面這些值來產生點斜式。<br/>換句話說，給定後面這些值給一個看起來像是 <code>(y - y_{1}) = m(x - x_{1})</code> 的方程式， <code>x_{1}</code> 、 <code>y_{1}</code> 、與 <code>m</code> 的值各是多少？</p>
                 <p><code>x_{1}=\color{#b22222}{<var>X1</var>},\quad f(x_{1})=\color{#b22222}{<var>Y1</var>}.</code><br /><code>x_{2}=\color{#4169E1}{<var>X2</var>},\quad f(x_{2})\text{ } = \color{#4169E1}{<var>Y2</var>}.</code> </p>
                 <div class="solution" data-type="set">
                     <div class="set-sol" data-type="multiple">
@@ -39,24 +39,24 @@
                             <code>(y - \space</code><span class="sol" data-type="rational"></span><code>) = \space</code><span class="sol" data-type="rational"></span><code>(x - \space</code><span class="sol" data-type="rational"></span><code>)</code>
                         </p>
                     </div>
-                    <p class="example">integers, like <code>6</code></p>
-                    <p class="example"><em>simplified proper</em> fractions, like <code>3/5</code></p>
-                    <p class="example"><em>simplified improper</em> fractions, like <code>7/4</code></p>
-                    <p class="example">and/or <em>exact</em> decimals, like <code>0.75</code></p>
-                    <p class="example">pay attention to the sign of each number you enter to be sure the entire equation is correct</p>
+                    <p class="example">整數，例：<code>6</code></p>
+                    <p class="example">真分數的<em>最簡</em>分數，例：<code>3/5</code></p>
+                    <p class="example">假分數的<em>最簡</em>分數，例：<code>7/4</code></p>
+                    <p class="example">小數，例：<code>0.75</code></p>
+                    <p class="example">請注意你輸入的各個數值的正負號，確保整個等式是正確的</p>
                 </div>
                 <div class="hints">
-                    <p><code>f(x)</code> is just a fancy term for <code>y</code>.  So one point is <code>(\color{#b22222}{<var>X1</var>}, \color{#b22222}{<var>Y1</var>})</code>.</p>
-                    <p>The formula to find the slope is: <code>m = (y_{1} - y_{2}) / (x_{1} - x_{2})</code>.</p>
-                    <p>So, by plugging in the numbers, we get <code>\displaystyle {} \frac{\color{#b22222}{<var>Y1</var>} - <span data-if="Y2 &lt; 0" >(</span>\color{#4169E1}{<var>Y2</var>}<span data-if="Y2 &lt; 0" >)</span>}{\color{#b22222}{<var>X1</var>} - <span data-if="X2 &lt; 0" >(</span>\color{#4169E1}{<var>X2</var>}<span data-if="X2 &lt; 0" >)</span>} =</code>
+                    <p><code>f(x)</code> 是一個代表 <code>y</code> 的項式，所以可以定義一個點 <code>(\color{#b22222}{<var>X1</var>}, \color{#b22222}{<var>Y1</var>})</code> 。</p>
+                    <p>而用於了解斜率的公式為： <code>m = (y_{1} - y_{2}) / (x_{1} - x_{2})</code> 。</p>
+                    <p>所以，代入這些數值後，我們得到斜率為 <code>\displaystyle {} \frac{\color{#b22222}{<var>Y1</var>} - <span data-if="Y2 &lt; 0" >(</span>\color{#4169E1}{<var>Y2</var>}<span data-if="Y2 &lt; 0" >)</span>}{\color{#b22222}{<var>X1</var>} - <span data-if="X2 &lt; 0" >(</span>\color{#4169E1}{<var>X2</var>}<span data-if="X2 &lt; 0" >)</span>} =</code>
                     <span data-if="getGCD( Y1-Y2, X1-X2 ) !== 1 || X1-X2 === 1 || X1-X2 &lt; 0 || Y1-Y2 &lt; 0">
                         <code>\color{#68228B}{\dfrac{<var>Y1-Y2</var>}{<var> X1-X2</var>}} =</code>
                     </span>
                     <code>\color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}</code></p>
                     <div>
-                        <p>Select one of the points to substitute for <code>x_{1}</code> and <code>y_{1}</code> in the point slope formula.  The solution is then either:</p>
+                        <p>選擇一個點代入點斜式的 <code>x_{1}</code> 與 <code>y_{1}</code> ，結果就會是下列兩者之一：</p>
                         <p><code>(y - \color{#b22222}{<var>Y1</var>}) = \color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}(x - \color{#b22222}{<var>X1</var>})</code></p>
-                        <p>OR</p>
+                        <p>或</p>
                         <p><code>(y - \color{#4169E1}{<var>Y2</var>}) = \color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}(x - \color{#4169E1}{<var>X2</var>})</code></p>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <var id="Y2">randRangeNonZero( -5, 5 )</var>
                     <var id="SLOPE">(Y1 - Y2) / (X1 - X2)</var>
                 </div>
-                <p class="problem"> A line passes through both <code>(\color{#b22222}{<var>X1</var>}, \color{#b22222}{<var>Y1</var>})</code> and <code>(\color{#4169E1}{<var>X2</var>}, \color{#4169E1}{<var>Y2</var>})</code>. Express the equation of the line in point slope form.</p>
+                <p class="problem">一條同時經過 <code>(\color{#b22222}{<var>X1</var>}, \color{#b22222}{<var>Y1</var>})</code> 與 <code>(\color{#4169E1}{<var>X2</var>}, \color{#4169E1}{<var>Y2</var>})</code> 的線，請用點斜式來表示這條線的等式。</p>
                 <div class="solution" data-type="set">
                     <div class="set-sol" data-type="multiple">
                         <span class="sol" data-type="rational"><var>Y2</var></span>
@@ -86,22 +86,22 @@
                             <code>(y - \space</code><span class="sol" data-type="rational"></span><code>) = \space</code><span class="sol" data-type="rational"></span><code>(x - \space</code><span class="sol" data-type="rational"></span><code>)</code>
                         </p>
                     </div>
-                    <p class="example">integers, like <code>6</code></p>
-                    <p class="example"><em>simplified proper</em> fractions, like <code>3/5</code></p>
-                    <p class="example"><em>simplified improper</em> fractions, like <code>7/4</code></p>
-                    <p class="example">and/or <em>exact</em> decimals, like <code>0.75</code></p>
-                    <p class="example">pay attention to the sign of each number you enter to be sure the entire equation is correct</p>
+                    <p class="example">整數，例：<code>6</code></p>
+                    <p class="example">真分數的<em>最簡</em>分數，例：<code>3/5</code></p>
+                    <p class="example">假分數的<em>最簡</em>分數，例：<code>7/4</code></p>
+                    <p class="example">小數，例：<code>0.75</code></p>
+                    <p class="example">請注意你輸入的各個數值的正負號，確保整個等式是正確的</p>
                 </div>
                 <div class="hints">
-                    <p>The formula to find the slope is: <code>m = (y_{1} - y_{2}) / (x_{1} - x_{2})</code>.</p>
-                    <p>So, by plugging in the numbers, we get <code>\displaystyle {} \frac{\color{#b22222}{<var>Y1</var>} - <span data-if="Y2 &lt; 0" >(</span>\color{#4169E1}{<var>Y2</var>}<span data-if="Y2 &lt; 0" >)</span>}{\color{#b22222}{<var>X1</var>} - <span data-if="X2 &lt; 0" >(</span>\color{#4169E1}{<var>X2</var>}<span data-if="X2 &lt; 0" >)</span>} =</code>
+                    <p>用於了解斜率的公式為： <code>m = (y_{1} - y_{2}) / (x_{1} - x_{2})</code> 。</p>
+                    <p>所以，代入這些數值後，我們得到斜率為 <code>\displaystyle {} \frac{\color{#b22222}{<var>Y1</var>} - <span data-if="Y2 &lt; 0" >(</span>\color{#4169E1}{<var>Y2</var>}<span data-if="Y2 &lt; 0" >)</span>}{\color{#b22222}{<var>X1</var>} - <span data-if="X2 &lt; 0" >(</span>\color{#4169E1}{<var>X2</var>}<span data-if="X2 &lt; 0" >)</span>} =</code>
                     <span data-if="getGCD( Y1-Y2, X1-X2 ) !== 1 || X1-X2 === 1 || X1-X2 &lt; 0 || Y1-Y2 &lt; 0">
                         <code>\color{#68228B}{\dfrac{<var>Y1-Y2</var>}{<var> X1-X2</var>}} =</code>
                     </span><code> \color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}</code></p>
                     <div>
-                        <p>Select one of the points to substitute for <code>x_{1}</code> and <code>y_{1}</code> in the point slope formula.  The solution then becomes either:</p>
+                        <p>選擇一個點代入點斜式的 <code>x_{1}</code> 與 <code>y_{1}</code> ，結果就會是下列兩者之一：</p>
                         <p><code>(y - \color{#b22222}{<var>Y1</var>}) = \color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}(x - \color{#b22222}{<var>X1</var>})</code></p>
-                        <p>OR</p>
+                        <p>或</p>
                         <p><code>(y - \color{#4169E1}{<var>Y2</var>}) = \color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}(x - \color{#4169E1}{<var>X2</var>})</code></p>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                     <var id="Y2">randRangeNonZero( -5, 5 )</var>
                     <var id="SLOPE">(Y1 - Y2)/ (X1 - X2)</var>
                 </div>
-                <p class="problem"> The slope of a line is <code>\color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}</code> and the y-intercept is <code>\color{#4169E1}{<var>Y1</var>}</code>. Express the equation of the line in point slope form.</p>
+                <p class="problem">一條線的斜率為 <code>\color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}</code> ，而y截距是 <code>\color{#4169E1}{<var>Y1</var>}</code> ，請用點斜式來表示這條線的等式。</p>
                 <div class="solution" data-type="set">
                     <div class="set-sol" data-type="multiple">
                         <span class="sol" data-type="rational"><var>Y1</var></span>
@@ -126,17 +126,17 @@
                             <code>(y - \space</code><span class="sol" data-type="rational"></span><code>) = \space</code><span class="sol" data-type="rational"></span><code>(x - \space</code><span class="sol" data-type="rational"></span><code>)</code>
                         </p>
                     </div>
-                    <p class="example">integers, like <code>6</code></p>
-                    <p class="example"><em>simplified proper</em> fractions, like <code>3/5</code></p>
-                    <p class="example"><em>simplified improper</em> fractions, like <code>7/4</code></p>
-                    <p class="example">and/or <em>exact</em> decimals, like <code>0.75</code></p>
-                    <p class="example">pay attention to the sign of each number you enter to be sure the entire equation is correct</p>
+                    <p class="example">整數，例：<code>6</code></p>
+                    <p class="example">真分數的<em>最簡</em>分數，例：<code>3/5</code></p>
+                    <p class="example">假分數的<em>最簡</em>分數，例：<code>7/4</code></p>
+                    <p class="example">小數，例：<code>0.75</code></p>
+                    <p class="example">請注意你輸入的各個數值的正負號，確保整個等式是正確的</p>
                 </div>
                 <div class="hints">
-                    <p>The y-intercept is the value of <code>y</code> when <code>x = 0</code>, so it defines a point you can use:<code>\quad(\color{#b22222}{<var>X1</var>}, \color{#b22222}{<var>Y1</var>})</code>.</p>
-                    <p>An equation in point slope form looks like: <code>(y - y_{1}) = m(x - x_{1})</code> </p>
+                    <p>當 <code>x = 0</code> 時，y截距的值是 <code>y</code> ，因此這樣子定義了一個你可以用的點： <code>\quad(\color{#b22222}{<var>X1</var>}, \color{#b22222}{<var>Y1</var>})</code> 。</p>
+                    <p>一個用點斜式表示的等式看起來像是： <code>(y - y_{1}) = m(x - x_{1})</code> </p>
                     <div>
-                        <p> Thus, the solution in point slope form can be written as:<br /><code>(y - \color{#b22222}{<var>Y1</var>}) = \color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}(x - \color{#b22222}{<var>X1</var>})</code></p>
+                        <p>所以，用點斜式表示的結果就可以寫成：<br /><code>(y - \color{#b22222}{<var>Y1</var>}) = \color{#68228B}{<var>fractionReduce(Y1 - Y2, X1 - X2)</var>}(x - \color{#b22222}{<var>X1</var>})</code></p>
                     </div>
                 </div>
             </div>
