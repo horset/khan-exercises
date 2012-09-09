@@ -27,7 +27,7 @@
                 <var id="GRAPH_IN_QUESTION">randRange( 0, 1 )</var>
             </div>
             <div class="question">
-                <p>一條線經過 <code>(<var>X1</var>, <var>Y1</var>)</code> 與 <code>(<var>X2</var>, <var>Y2</var>)</code> ，這條線的斜率是多少？</p>
+                <p>一條線經過點 <code>(<var>X1</var>, <var>Y1</var>)</code> 與 <code>(<var>X2</var>, <var>Y2</var>)</code> ，請問這條線的斜率是多少？</p>
                 <div data-if="GRAPH_IN_QUESTION" class="graphie" id="slope">
                     graphInit({
                         range: 10,
@@ -134,7 +134,7 @@
                 <var id="DUMMY">[ 0, 1, 2, 3 ]</var>
                 <var id="M">SLOPES[WHICH]</var>
             </div>
-            <p class="question">那一張圖最適合表示一個為 <code><var>M.display</var></code> 的斜率？</p>
+            <p class="question">請問哪一張圖最適合表示一個為 <code><var>M.display</var></code> 的斜率？</p>
             <div data-each="DUMMY as index">
                 <div class="graphie quarter-graph">
                     graphInit({
@@ -186,8 +186,8 @@
             <p class="question"><span data-if="WHICH ===1">哪一張圖最能表示一個為 <code><var>M.display</var></code> 的斜率？</span><span data-else>哪一張圖最能表示一個未定義的斜率？</span></p>
             <div class="hints">
                 <p style="clear: both">記得斜率相當於一條線的陡峭程度。</p>
-                <p>想像一下往上走向一個丘陵的高點，往上走的軌跡可以用一條線來表現。一個比較大的斜率就代表一個比較陡峭的丘陵。</p>
-                <p data-if="M.value === 0">斜率為 <code><var>M.display</var></code> 代表根本就沒有丘陵的存在，圖應該要是平坦的。</p>
+                <p>想像一下，往上走向一個丘陵的高點，往上走的軌跡可以用一條線來表現。一個比較大的斜率就代表一個比較陡峭的丘陵。</p>
+                <p data-if="M.value === 0">斜率為 <code><var>M.display</var></code> 代表根本就沒有丘陵的存在，圖應該是平坦的。</p>
                 <p data-if="M.value === Number.POSITIVE_INFINITY">斜率為 <var>M.display</var> 相當於一條垂直的線，就像是一個不可能存在的超陡丘陵。</p>
                 <p><code>\color{<var>COLORS[WHICH].hex</var>}{\text{<var>COLORS[WHICH].name.toLowerCase()</var>}}</code> 的圖最能表示一個<span data-if="WHICH === 2">未定義</span><span data-if="WHICH === 1">為 <code><var>M.display</var></code> </span>的斜率。</p>
             </div>
