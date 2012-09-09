@@ -2,7 +2,7 @@
 <html data-require="math math-format">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Domain of a function</title>
+    <title>函數的定義域</title>
     <script src="../khan-exercise.js"></script>
     <script type="text/javascript">
         function filter( o, f ) {
@@ -54,7 +54,7 @@
 
                 <p class="problem"><code>f(x) = \dfrac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) }</code></p>
 
-                <p class="question">What is the domain of <code>f(x)</code>?</p>
+                <p class="question">請問 <code>f(x)</code> 的定義域為何？</p>
 
                 <p class="solution"><code><var>CHOICES["two-denom-simplify"]</var></code></p>
                 <ul class="choices" data-show="5" data-none="true">
@@ -62,10 +62,10 @@
                 </ul>
 
                 <div class="hints">
-                    <p><code>f(x)</code> is undefined when the denominator is 0.</p>
-                    <p>The denominator is 0 when <code>x=<var>(-1*A)</var></code> or <code>x=<var>B</var></code>.</p>
-                    <p>So we know that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>B</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["two-denom-simplify"]</var></code>.</p>
+                    <p>當分母等於 0 的時候， <code>f(x)</code> 是未定義的。</p>
+                    <p>當 <code>x=<var>(-1*A)</var></code> 或 <code>x=<var>B</var></code> 的時候，分母等於 0 。</p>
+                    <p>所以我們得知 <code>x \neq <var>-1*A</var></code> 與 <code>x \neq <var>B</var></code> 。</p>
+                    <p>用數學的方式來表示後，定義域為 <code><var>CHOICES["two-denom-simplify"]</var></code> 。</p>
                 </div>
 
             </div>
@@ -80,13 +80,13 @@
                 </ul>
 
                 <div class="hints">
-                    <p><code>f(x)</code> is a piecewise function, so we need to examine where each piece is undefined.</p>
-                    <p>The first piecewise definition of <code>f(x)</code>, <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) }</code>, is undefined when its denominator is 0.</p>
-                    <p>The denominator is 0 when <code>x=<var>-1*A</var></code> or <code>x=<var>B</var></code>.</p>
-                    <p>So, based on the first piecewise definition, we know that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>B</var></code>.</p>
-                    <p>However, the second piecewise definition applies when <code>x = <var>B</var></code>, and the second piecewise definition, <code><var>C</var></code>, has no weird gaps or holes, so <code>f(x)</code> is defined at <code>x = <var>B</var></code>.</p>
-                    <p>So the only restriction on the domain is that <code>x \neq <var>-1*A</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["two-denom-cond"]</var></code>.</p>
+                    <p><code>f(x)</code> 是一個分段函數，所以我們需要檢查哪些片段是未定義的。</p>
+                    <p>當分母為 0 時，<code>f(x)</code> 中第一個片段的定義 <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) }</code> 是未定義的狀態。</p>
+                    <p>當 <code>x=<var>-1*A</var></code> 或 <code>x=<var>B</var></code> 的時候，分母會是 0 。</p>
+                    <p>因此，基於第一個片段的定義，我們得知 <code>x \neq <var>-1*A</var></code> 與 <code>x \neq <var>B</var></code> 。</p>
+                    <p>然而，第二個片段的定義只會在 <code>x = <var>B</var></code> 時成立，而且第二個片段的定義是 <code><var>C</var></code> ，沒有任何間斷，所以當 <code>x = <var>B</var></code> 的時候， <code>f(x)</code> 會是已定義的。</p>
+                    <p>所以定義域唯一的限制就只有 <code>x \neq <var>-1*A</var></code> 。</p>
+                    <p>以數學的方式呈現後，定義域為 <code><var>CHOICES["two-denom-cond"]</var></code> 。</p>
                 </div>
 
             </div>
@@ -101,10 +101,10 @@
                 </ul>
 
                 <div class="hints">
-                    <p><code>f(x)</code> is undefined when the radicand (the expression under the radical) is less than zero.</p>
-                    <p>So the radicand, <code>x - <var>A</var></code>, must be greater than or equal to zero.</p>
-                    <p>So <code>x - <var>A</var> \geq 0</code>; this means <code>x \geq <var>A</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES.sqrt</var></code>.</p>
+                    <p>當被開方數（根號底下的式子）小於 0 的時候， <code>f(x)</code> 是處於未定義的狀態。</p>
+                    <p>所以這個被開方數 <code>x - <var>A</var></code> 一定要大於或等於 0 。</p>
+                    <p>因此 <code>x - <var>A</var> \geq 0</code>，也就代表 <code>x \geq <var>A</var></code> 。</p>
+                    <p>用數學的方式來表示後，定義域為 <code><var>CHOICES.sqrt</var></code>.</p>
                 </div>
 
             </div>
@@ -119,16 +119,16 @@
                 </ul>
 
                 <div class="hints">
-                    <p>First, we need to consider that <code>f(x)</code> is undefined when the radicand (the expression under the radical) is less than zero.</p>
-                    <p>So the radicand, <code>x - <var>A</var></code>, must be greater than or equal to zero.</p>
-                    <p>So <code>x - <var>A</var> \geq 0</code>; this means <code>x \geq <var>A</var></code>.</p>
-                    <p>Next, we also need to consider that <code>f(x)</code> is undefined when the denominator, <code>\sqrt{ x - <var>A</var> }</code>, is zero.</p>
-                    <p>So <code>\sqrt{ x - <var>A</var> } \neq 0</code>.</p>
-                    <p><code>\sqrt{ z } = 0</code> only when <code>z = 0</code>, so <code>\sqrt{ x - <var>A</var> } \neq 0</code> means that <code>x - <var>A</var> \neq 0</code>.</p>
-                    <p>So <code>x \neq <var>A</var></code>.</p>
-                    <p>So we have two restrictions: <code>x \geq <var>A</var></code> and <code>x \neq <var>A</var></code>.</p>
-                    <p>Combining these two restrictions, we are left with simply <code>x > <var>A</var></code>.</p>
-                    <p>Expressing this in mathematical notation, the domain is <code><var>CHOICES["inverse-sqrt"]</var></code>.</p>
+                    <p>首先，我們要先想到：當被開方數（根號底下的式子）小於 0 的時候， <code>f(x)</code> 是處於未定義的狀態。</p>
+                    <p>所以被開方數 <code>x - <var>A</var></code> 一定要大於或等於 0 。</p>
+                    <p>因此 <code>x - <var>A</var> \geq 0</code> ，也就是 <code>x \geq <var>A</var></code> 。</p>
+                    <p>接著，我們也要想到：當分母 <code>\sqrt{ x - <var>A</var> }</code> 是 0 的時候，<code>f(x)</code> 也是處於未定義的狀態。Next, we also need to consider that <code>f(x)</code> is undefined when the denominator, <code>\sqrt{ x - <var>A</var> }</code>, is zero.</p>
+                    <p>所以 <code>\sqrt{ x - <var>A</var> } \neq 0</code> 。</p>
+                    <p><code>\sqrt{ z } = 0</code> 只有當 <code>z = 0</code> 的時候，所以 <code>\sqrt{ x - <var>A</var> } \neq 0</code> 代表 <code>x - <var>A</var> \neq 0</code> 。</p>
+                    <p>因此 <code>x \neq <var>A</var></code> 。</p>
+                    <p>就這樣，我們有了兩個限制： <code>x \geq <var>A</var></code> 與 <code>x \neq <var>A</var></code> 。</p>
+                    <p>我們將這兩個限制做個結合，簡化成 <code>x > <var>A</var></code> 。</p>
+                    <p>用數學符號將定義域表示出來，定義域為 <code><var>CHOICES["inverse-sqrt"]</var></code> 。</p>
                 </div>
 
             </div>
@@ -143,17 +143,17 @@
                 </ul>
 
                 <div class="hints">
-                    <p><code>f(x)</code> is a piecewise function, so we need to examine where each piece is undefined.</p>
-                    <p>The first piecewise definition of <code>f(x)</code>, <code>\frac{ 1 }{ \sqrt{ x - <var>A</var> } }</code>, is undefined where the denominator is zero and where the radicand (the expression under the radical) is less than zero.</p>
-                    <p>The denominator, <code>\sqrt{ x - <var>A</var> }</code>, is zero when <code>x - <var>A</var> = 0</code>, so we know that <code>x \neq <var>A</var></code>.</p>
-                    <p>The radicand, <code>x - <var>A</var></code>, is less than zero when <code>x < <var>A</var></code>, so we know that <code>x \geq <var>A</var></code>.</p>
-                    <p>So the first piecewise definition of <code>f(x)</code> is defined when <code>x \neq <var>A</var></code> and <code>x \geq <var>A</var></code>. Combining these two restrictions, the first piecewise definition is defined when <code>x > <var>A</var></code>. The first piecewise defintion applies when <code>x \geq <var>A</var></code>, so this restriction is relevant.</p>
-                    <p>The second piecewise definition of <code>f(x)</code>, <code>\frac{ 1 }{ \sqrt{ <var>A</var> - x } }</code>, applies when <code>x < <var>A</var></code> and is undefined where the denominator is zero and where the radicand is less than zero.</p>
-                    <p>The denominator, <code>\sqrt{ <var>A</var> - x }</code>, is zero when <code><var>A</var> - x = 0</code>, so we know that <code>x \neq <var>A</var></code>.</p>
-                    <p>The radicand, <code><var>A</var> - x</code>, is less than zero when <code>x > <var>A</var></code>, so we know that <code>x \leq <var>A</var></code>.</p>
-                    <p>So the second piecewise definition of <code>f(x)</code> is defined when <code>x \neq <var>A</var></code> and <code>x \leq <var>A</var></code>. Combining these two restrictions, the second piecewise definition is defined when <code>x < <var>A</var></code>. However, the second piecewise definition of <code>f(x)</code> only applies when <code>x < <var>A</var></code>, so restriction isn't actually relevant to the domain of <code>f(x)</code>.</p>
-                    <p>So the first piecewise definition is defined when <code>x > <var>A</var></code> and applies when <code>x \geq <var>A</var></code>; the second piecewise definition is defined when <code>x < <var>A</var></code> and applies when <code>x < <var>A</var></code>. Putting the restrictions of these two together, the only place where a definition applies and the value is undefined is at <code>x = <var>A</var></code>. So the only restriction on the domain of <code>f(x)</code> is <code>x \neq <var>A</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["inverse-sqrt-cond"]</var></code>.</p>
+                    <p><code>f(x)</code> 是一個分段函數，所以我們需要檢查哪些片段是未定義的。</p>
+                    <p>當分母為 0 或是被開方數（根號底下的式子）小於 0 的時候，<code>f(x)</code> 中第一個片段的定義 <code>\frac{ 1 }{ \sqrt{ x - <var>A</var> } }</code> 是未定義的。</p>
+                    <p>分母 <code>\sqrt{ x - <var>A</var> }</code> 在 <code>x - <var>A</var> = 0</code> 的情況下會是 0，所以我們得知 <code>x \neq <var>A</var></code> 。</p>
+                    <p>被開方數 <code>x - <var>A</var></code> 在 <code>x < <var>A</var></code> 的情況下會小於 0，所以我們得知 <code>x \geq <var>A</var></code> 。</p>
+                    <p>所以當 <code>x \neq <var>A</var></code> 與 <code>x \geq <var>A</var></code> 時， <code>f(x)</code> 中第一個片段的定義是未定義的。結合這兩個限制後，當 <code>x > <var>A</var></code> 時，第一個片段的定義是已定義的。當 <code>x \geq <var>A</var></code> 時，<code>f(x)</code> 中第一個片段的定義成立，所以這個限制是有關係的。</p>
+                    <p>當 <code>x < <var>A</var></code> 時， <code>f(x)</code> 中第二個片段的定義 <code>\frac{ 1 }{ \sqrt{ <var>A</var> - x } }</code> 成立，而且當分母為 0 或是被開方數（根號底下的式子）小於 0 的時候是未定義的。</p>
+                    <p>分母 <code>\sqrt{ <var>A</var> - x }</code> 在 <code><var>A</var> - x = 0</code> 的情況下會是 0 ，所以我們得知 <code>x \neq <var>A</var></code> 。</p>
+                    <p>被開方數 <code><var>A</var> - x</code> 在 <code>x > <var>A</var></code> 的情況會下小於 0，所以我們得知 <code>x \leq <var>A</var></code> 。</p>
+                    <p>所以當 <code>x \neq <var>A</var></code> 與 <code>x \leq <var>A</var></code> 時，<code>f(x)</code> 中第二個片段的定義是已定義的。結合這兩個限制，當 <code>x < <var>A</var></code> 時，第二個片段的定義是已定義的。但是， <code>f(x)</code> 中第二個片段的定義只有在 <code>x < <var>A</var></code> 成立，所以這個限制其實跟 <code>f(x)</code> 的定義域沒有關聯性。</p>
+                    <p>所以當 <code>x > <var>A</var></code> 時，第一個片段的定義是已定義的，而且在 <code>x \geq <var>A</var></code> 時成立；而當 <code>x < <var>A</var></code> 時，第二個片段的定義是已定義的，而且在 <code>x < <var>A</var></code> 時成立。將這兩個的限制結合在一起，唯一一個讓定義成立且其值是未定義的情況就是在 <code>x = <var>A</var></code> 。所以 <code>f(x)</code> 的定義域中唯一的限制就是 <code>x \neq <var>A</var></code> 。</p>
+                    <p>用數學的方式來表示後，定義域為 <code><var>CHOICES["inverse-sqrt-cond"]</var></code>.</p>
                 </div>
 
             </div>
@@ -168,16 +168,16 @@
                 </ul>
 
                 <div class="hints">
-                    <p>First, we need to consider that <code>f(x)</code> is undefined anywhere where either radical is undefined, so anywhere where either radicand (the expression under the radical symbol) is less than zero.</p>
-                    <p>The top radical is undefined when <code><var>A+B</var> - x < 0</code>.</p>
-                    <p>So the top radical is undefined when <code>x > <var>A+B</var></code>, so we know <code>x \leq <var>A+B</var></code>.</p>
-                    <p>The bottom radical is undefined when <code>x - <var>A</var> < 0</code>.</p>
-                    <p>So the bottom radical is undefined when <code>x < <var>A</var></code>, so we know <code>x \geq <var>A</var></code>.</p>
-                    <p>Next, we need to consider that <code>f(x)</code> is undefined anywhere where the denominator, <code>\sqrt{ x - <var>A</var> }</code>, is zero.</p>
-                    <p>So <code>\sqrt{ x - <var>A</var> } \neq 0</code>, so <code>x - <var>A</var> \neq 0</code>, so <code>x \neq <var>A</var></code>.</p>
-                    <p>So we have three restrictions: <code>x \leq <var>A+B</var></code>, <code>x \geq <var>A</var></code>, and <code>x \neq <var>A</var></code>.</p>
-                    <p>Combining these three restrictions, we know that <code><var>A</var> < x \leq <var>A+B</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["sqrt-frac"]</var></code>.</p>
+                    <p>首先，我們先想到：只要根數是未定義， <code>f(x)</code> 就會是未定義，所以被開方數（在根號底下的式子）不能比 0 小。so anywhere where either radicand (the expression under the radical symbol) is less than zero.</p>
+                    <p>當 <code><var>A+B</var> - x < 0</code> 時，在上方的根數是未定義的。</p>
+                    <p>所以當 <code>x > <var>A+B</var></code> 時，在上方的根數是未定義的，因此我們得知 <code>x \leq <var>A+B</var></code> 。</p>
+                    <p>當 <code>x - <var>A</var> < 0</code> 時，下方的根數是未定義的。</p>
+                    <p>所以當 <code>x < <var>A</var></code> 時，下方的根數是未定義的，因此我們得知 <code>x \geq <var>A</var></code> 。</p>
+                    <p>接著，我們也想到當分母 <code>\sqrt{ x - <var>A</var> }</code> 為 0 時， <code>f(x)</code> 是未定義的。</p>
+                    <p>所以 <code>\sqrt{ x - <var>A</var> } \neq 0</code> ，因此 <code>x - <var>A</var> \neq 0</code>，因此 <code>x \neq <var>A</var></code> 。</p>
+                    <p>就這樣，我們有了三個限制： <code>x \leq <var>A+B</var></code> 、 <code>x \geq <var>A</var></code> 、與 <code>x \neq <var>A</var></code> 。</p>
+                    <p>結合這三個限制，我們得到 <code><var>A</var> < x \leq <var>A+B</var></code> 。</p>
+                    <p>用數學的方式來表示後，定義域為 <code><var>CHOICES["sqrt-frac"]</var></code> 。</p>
                 </div>
 
             </div>
@@ -192,13 +192,13 @@
                 </ul>
 
                 <div class="hints">
-                    <p><code>f(x)</code> is a piecewise function, so we need to examine where each piece is undefined.</p>
-                    <p>The first piecewise definition of <code>f(x)</code>, <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>C</var> ) }</code>, is undefined where the denominator is zero.</p>
-                    <p>The denominator, <code>(x + <var>A</var>)(x - <var>C</var>)</code>, is zero when <code>x = <var>-1*A</var></code> or <code>x = <var>C</var></code>.</p>
-                    <p>So the first piecewise definition of <code>f(x)</code> is defined when <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>C</var></code>. The first piecewise definition applies when <code>x = <var>-1*A</var></code> and <code>x = <var>C</var></code>, so these restrictions are relevant to the domain of <code>f(x)</code>.</p>
-                    <p>The second piecewise definition of <code>f(x)</code>, <code><var>A</var></code>, is a simple horizontal line function and so has no holes or gaps to worry about, so it is defined everywhere.</p>
-                    <p>So the first piecewise definition is defined when <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>C</var></code> and applies when <code>x \neq <var>B</var></code>; the second piecewise definition is defined always and applies when <code>x = <var>B</var></code>. Putting the restrictions of these two together, the only places where a definition applies and is undefined are at <code>x = <var>-1*A</var></code> and <code>x = <var>C</var></code>. So the restriction on the domain of <code>f(x)</code> is that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>C</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["two-denom-cond-weird"]</var></code>.</p>
+                    <p><code>f(x)</code> 是一個分段函數，所以我們需要檢查哪些片段是未定義的。</p>
+                    <p>當分母為 0 時， <code>f(x)</code> 的第一個片段定義 <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>C</var> ) }</code> 是未定義。</p>
+                    <p>分母 <code>(x + <var>A</var>)(x - <var>C</var>)</code> 會在 <code>x = <var>-1*A</var></code> 或 <code>x = <var>C</var></code> 時為 0 。</p>
+                    <p>所以當 <code>x \neq <var>-1*A</var></code> 與 <code>x \neq <var>C</var></code> 時，<code>f(x)</code> 的第一個片段定義是已定義的狀態。當 <code>x = <var>-1*A</var></code> 與 <code>x = <var>C</var></code> 時，第一個片段定義成立，所以這些限制是跟 <code>f(x)</code> 的定義域有關。</p>
+                    <p><code>f(x)</code> 的第二個片段定義 <code><var>A</var></code> ，是一個簡單的水平線性函數，所以不用煩惱有任何間斷處，因此它不管在何處都是處於定義的狀態。</p>
+                    <p>所以當 <code>x \neq <var>-1*A</var></code> 與 <code>x \neq <var>C</var></code> 時，第一個片段的定義是已定義的狀態，而且當 <code>x \neq <var>B</var></code> 時成立；第二個片段的定義則總是處於已定義的狀態，而且當 <code>x = <var>B</var></code> 時成立。將這兩個限制結合在一起，在套用定義之後唯一會造成未定義狀態的地方是在 <code>x = <var>-1*A</var></code> 與 <code>x = <var>C</var></code> 時。所以在 <code>f(x)</code> 的定義域中的限制是 <code>x \neq <var>-1*A</var></code> 與 <code>x \neq <var>C</var></code> 。</p>
+                    <p>用數學的方式來表示後，定義域為 <code><var>CHOICES["two-denom-cond-weird"]</var></code>.</p>
                 </div>
 
             </div>
@@ -214,13 +214,13 @@
 
                 <div class="hints">
                     <p><code>f(x) = \dfrac{ \sqrt{ x - <var>C</var> } }{ x^2 + <var>A+B</var> x + <var>A*B</var> } = \dfrac{ \sqrt{ x - <var>C</var> } }{ ( x + <var>A</var> )( x + <var>B</var> ) }</code></p>
-                    <p>First, we need to consider that <code>f(x)</code> is undefined anywhere where the radical is undefined, so the radicand (the expression under the radical) cannot be less than zero.</p>
-                    <p>So <code>x - <var>C</var> \geq 0</code>, which means <code>x \geq <var>C</var></code>.</p>
-                    <p>Next, we also need to consider that <code>f(x)</code> is undefined anywhere where the denominator is zero.</p>
-                    <p>So <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>-1*B</var></code>.</p>
-                    <p>However, these last two restrictions are irrelevant since <code><var>C</var> > <var>-1*A</var></code> and <code><var>C</var> > <var>-1*B</var></code> and so <code>x \geq <var>C</var></code> will ensure that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>-1*B</var></code>.</p>
-                    <p>Combining these restrictions, then, leaves us with simply <code>x \geq <var>C</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["sqrt-poly-frac"]</var></code>.</p>
+                    <p>首先，我們先想到：只要根數是未定義， <code>f(x)</code> 就會是未定義，所以被開方數（在根號底下的式子）不能比 0 小。</p>
+                    <p>所以 <code>x - <var>C</var> \geq 0</code> ，也就是 <code>x \geq <var>C</var></code> 。</p>
+                    <p>接著，我們也想到：只要分母是 0 ， <code>f(x)</code> 就會是未定義。</p>
+                    <p>因此 <code>x \neq <var>-1*A</var></code> 與 <code>x \neq <var>-1*B</var></code> 。</p>
+                    <p>但是，最後這兩個限制是不相干的，因為However, these last two restrictions are irrelevant since <code><var>C</var> > <var>-1*A</var></code> and <code><var>C</var> > <var>-1*B</var></code> and so <code>x \geq <var>C</var></code> will ensure that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>-1*B</var></code>.</p>
+                    <p>我們可以把這些限制做結合，並簡化成 <code>x \geq <var>C</var></code> 。</p>
+                    <p>用數學符號將定義域表示出來，定義域為 <code><var>CHOICES["sqrt-poly-frac"]</var></code> 。</p>
                 </div>
 
             </div>
@@ -235,11 +235,11 @@
                 </ul>
 
                 <div class="hints">
-                    <p><code>f(x)</code> is undefined when the radicand (the expression under the radical) is less than zero.</p>
-                    <p>So we know that <code><var>A</var> - \lvert x \rvert \geq 0</code>.</p>
-                    <p>So <code>\lvert x \rvert \leq <var>A</var></code>.</p>
-                    <p>This means <code>x \leq <var>A</var></code> and <code>x \geq <var>-1*A</var></code>; or, equivalently, <code><var>-1*A</var> \leq x \leq <var>A</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["sqrt-abs"]</var></code>.</p>
+                    <p>當被開方數（根號底下的式子）小於 0 的時候， <code>f(x)</code> 是處於未定義的狀態。</p>
+                    <p>所以我們得知 <code><var>A</var> - \lvert x \rvert \geq 0</code> 。</p>
+                    <p>因此 <code>\lvert x \rvert \leq <var>A</var></code> 。</p>
+                    <p>這就代表 <code>x \leq <var>A</var></code> and <code>x \geq <var>-1*A</var></code>; or, equivalently, <code><var>-1*A</var> \leq x \leq <var>A</var></code>.</p>
+                    <p>用數學的方式來表示後，定義域為 <code><var>CHOICES["sqrt-abs"]</var></code>.</p>
                 </div>
 
             </div>
@@ -254,15 +254,15 @@
                 </ul>
 
                 <div class="hints">
-                    <p>First, we need to consider that <code>f(x)</code> is undefined anywhere where the radicand (the expression under the radical) is less than zero.</p>
-                    <p>So we know that <code><var>A</var> - \lvert x \rvert \geq 0</code>.</p>
-                    <p>This means <code>\lvert x \rvert \leq <var>A</var></code>, which means <code><var>-1*A</var> \leq x \leq <var>A</var></code>.</p>
-                    <p>Next, we need to consider that <code>f(x)</code> is also undefined anywhere where the denominator is zero.</p>
-                    <p>So we know that <code>\sqrt{ <var>A</var> - \lvert x \rvert } \neq 0</code>, so <code>\lvert x \rvert \neq <var>A</var></code>.</p>
-                    <p>This means that <code>x \neq <var>A</var></code> and <code>x \neq <var>-1*A</var></code>.</p>
-                    <p>So we have four restrictions: <code>x \geq <var>-1*A</var></code>, <code>x \leq <var>A</var></code>, <code>x \neq <var>-1*A</var></code>, and <code>x \neq <var>A</var></code>.</p>
-                    <p>Combining these four, we know that <code>x > <var>-1*A</var></code> and <code>x < <var>A</var></code>; alternatively, that <code><var>-1*A</var> < x < <var>A</var></code>.</p>
-                    <p>Expressing this mathematically, the domain is <code><var>CHOICES["inverse-sqrt-abs"]</var></code>.</p>
+                    <p>首先，我們先想到：當被開方數（根號底下的式子）小於 0 的時候， <code>f(x)</code> 是處於未定義的狀態。</p>
+                    <p>所以我們得知 <code><var>A</var> - \lvert x \rvert \geq 0</code> 。</p>
+                    <p>這也就代表 <code>\lvert x \rvert \leq <var>A</var></code>，也就是 <code><var>-1*A</var> \leq x \leq <var>A</var></code> 。</p>
+                    <p>接著，我們也想到：只要分母是 0 ， <code>f(x)</code> 就會是未定義。</p>
+                    <p>所以我們得知 <code>\sqrt{ <var>A</var> - \lvert x \rvert } \neq 0</code>，因此 <code>\lvert x \rvert \neq <var>A</var></code> 。</p>
+                    <p>這就代表 <code>x \neq <var>A</var></code> 與 <code>x \neq <var>-1*A</var></code> 。</p>
+                    <p>就這樣，我們有了四個限制： <code>x \geq <var>-1*A</var></code> 、 <code>x \leq <var>A</var></code> 、 <code>x \neq <var>-1*A</var></code> 、與 <code>x \neq <var>A</var></code> 。</p>
+                    <p>將這四個限制做個結合，我們得到 <code>x > <var>-1*A</var></code> 與 <code>x < <var>A</var></code> ； alternatively, that <code><var>-1*A</var> < x < <var>A</var></code>.</p>
+                    <p>用數學的方式來表示後，定義域為 <code><var>CHOICES["inverse-sqrt-abs"]</var></code>.</p>
                 </div>
 
             </div>
