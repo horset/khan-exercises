@@ -51,17 +51,16 @@ $.extend(KhanUtil, {
     //        - return "word"
     plural: (function() {
         var oneOffs = {
-            "測驗": "測驗",
-	//        中文沒有單複數的問題，故這個部份可以免除？
-    //        "shelf架子": "shelves架子",
-    //        "loaf麵包": "loaves麵包",
-    //        "potato馬鈴薯": "potatoes馬鈴薯",
-    //        "person人": "people人",
-    //        "is是": "are是",
-    //        "was是": "were是",
-    //        "foot腳": "feet腳",
-    //        "square foot平方公尺": "square feet平方公尺",
-    //        "tomato番茄": "tomatoes番茄"
+            "quiz測驗": "quizzes測驗", //（sjf：可以翻成“小考”）
+            "shelf架子": "shelves架子", //（sjf：“書架”）
+            "loaf麵包": "loaves麵包",
+            "potato馬鈴薯": "potatoes馬鈴薯",
+            "person人": "people人",
+            "is是": "are是",
+            "was是": "were是",
+            "foot腳": "feet腳", //（可以有兩個意思：腳、英尺。不知道實際上用哪一個？）
+            "square foot平方公尺": "square feet平方公尺",
+            "tomato番茄": "tomatoes番茄"
         };
 
         var pluralizeWord = function(word) {
@@ -201,7 +200,7 @@ $.fn["word-problemsLoad"] = function() {
         ["沂玲", "f"],
         ["怡婷", "f"],
         ["巧筠", "f"],
-        ["鎔毓", "f"],
+        ["鎔毓", "f"], //（有些名字太難，建議找一些較普遍的名字）
         ["柏清", "m"]
     ];
 
@@ -232,9 +231,9 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var exams = new IncrementalShuffler([
-        "考試",
-        "考試",
-        "測驗"
+        "考試", //（期末考）
+        "考試", //（月考）
+        "測驗" //（小考）
     ]);
 
     var binops = new IncrementalShuffler([
@@ -256,11 +255,11 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var collections = new IncrementalShuffler([
-        ["椅子", "排", "做"],
-        ["禮物", "袋子", "裝滿"],
-        ["軟糖", "堆", "做"],
-        ["書", "書架", "裝滿"],
-        ["餅乾", "盒", "裝滿"]
+        ["椅子", "排", "make做"], //（Make很多意思，不曉得在英文裡怎麼用？）
+        ["party favor派對", "bag包", "fill裝滿"],
+        ["軟糖", "堆", "make做"],
+        ["書", "書架", "fill裝滿"],
+        ["餅乾", "盒", "fill裝滿"]
     ]);
 
     var stores = new IncrementalShuffler([
@@ -274,7 +273,7 @@ $.fn["word-problemsLoad"] = function() {
         },
         {
             name: "食品",
-            items: new IncrementalShuffler(["香蕉", "麵包", "牛奶", "馬鈴薯"])
+            items: new IncrementalShuffler(["香蕉", "loaf of bread麵包", "gallon of milk牛奶", "馬鈴薯"]) //（一條麵包，一加侖牛奶？）
         },
         {
             name: "禮品",
@@ -353,7 +352,7 @@ $.fn["word-problemsLoad"] = function() {
         "均一國小",
         "永和國小",
         "興南國小",
-        "板橋國小"
+        "板橋國小" //（請用桃源國小代替）
     ]);
 
     var furnitureStore = new IncrementalShuffler([
@@ -367,7 +366,7 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var electronicStore = new IncrementalShuffler([
-        "液晶電視",
+        "液晶電視", //（可以簡化些：電視、電腦、筆電、相機）
         "桌上型電腦",
         "筆記型電腦",
         "數位相機"
@@ -410,7 +409,7 @@ $.fn["word-problemsLoad"] = function() {
         ["獅子", 12, 5],
         ["蜥蜴", 3, 1],
         ["羚羊", 13, 5],
-        ["豪豬", 20, 5],
+        ["豪豬", 20, 5], //（山豬）
         ["海豹", 15, 10],
         ["猴子", 16, 5],
         ["蛇", 25, 10],
@@ -430,7 +429,7 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var distanceActivities = new IncrementalShuffler([
-        {present: "騎", past: "騎", noun: "腳踏車", done: "騎", continuous: "騎"},
+        {present: "騎", past: "騎", noun: "腳踏車", done: "騎", continuous: "騎"}, //（這幾個都很難翻。騎過、正在騎？怪怪的）
         {present: "划", past: "划", noun: "船", done: "划", continuous: "划"},
         {present: "開", past: "開", noun: "汽車", done: "開", continuous: "開"},
         {present: "遛", past: "遛", noun: "狗", done: "遛", continuous: "遛"}
@@ -466,7 +465,7 @@ $.fn["word-problemsLoad"] = function() {
         },
 
         his: function(i) {
-            return people.get(i - 1).get(0)[1] === "m" ? "他的" : "她的";
+            return people.get(i - 1).get(0)[1] === "m" ? "他的" : "她的"; //（him、her似乎還是翻成他、她）
         },
 
         His: function(i) {
