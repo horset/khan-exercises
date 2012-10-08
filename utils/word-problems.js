@@ -126,22 +126,32 @@ $.extend(KhanUtil, {
                 var usePlural = (value !== 1);
 
                 // if no extra args, just add "s" (if plural)
-                if (arguments.length === 1) {
+                if (arguments.length === 1) { // plural(NUMBER)
                     return usePlural ? "" : ""; //"s" : ""
                 }
 
+                var measureWord = arg1.measureWord;
+            	if (typeof arg1.measureWord === "string") {
+            		measureWord = arg1.measureWord;
+            	} else if (typeof arg1.measureWord === "object" && arg1.measureWord.get){
+            		measureWord = arg1.measureWord.get(0);
+            	} else {
+            		measureWord = "";
+            	}
                 if (usePlural) {
-                    arg1 = arg2 || pluralizeWord(arg1);
+                	// 如果要用複數，且第三個參數（arg2）有值，則使用第三個參數當做複數型
+                    arg1 = arg2 || pluralizeWord(arg1);//plural(NUMBER, singular)或plural(NUMBER, singular, plural)
                 }
-
-                return value + " " + arg1;
-            } else if (typeof value === "string") {
+//                return value + " " + arg1;
+                // add measureWord if available (for Chinese)
+                return measureWord ? value + " " + measureWord + arg1 : value + " " + arg1; // NOTE 在這邊加很有效果
+            } else if (typeof value === "string" || typeof value === "object") {
                 var plural = pluralizeWord(value);
-                if (typeof arg1 === "string" && arguments.length === 3) {
+                if (typeof arg1 === "string" && arguments.length === 3) { // plural(singular, plural, NUMBER)
                     plural = arg1;
                     arg1 = arg2;
                 }
-                var usePlural = (arguments.length < 2 || (typeof arg1 === "number" && arg1 !== 1));
+                var usePlural = (arguments.length < 2 || (typeof arg1 === "number" && arg1 !== 1)); // plural(singular, NUMBER)或plural(singular)
                 return usePlural ? plural : value;
             }
         };
@@ -299,9 +309,9 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var exercises = new IncrementalShuffler([
-        "伏地挺身",
-        "仰臥起坐",
-        "交互蹲跳",
+        {singular:"伏地挺身", measureWord: new IncrementalShuffler(["個", "次", "下"]), toString:function(){return this.singular;}},
+        {singular:"仰臥起坐", measureWord: new IncrementalShuffler(["個", "次", "下"]), toString:function(){return this.singular;}},
+        {singular:"交互蹲跳", measureWord: new IncrementalShuffler(["個", "次", "下"]), toString:function(){return this.singular;}},
     ]);
 
     var fruits = new IncrementalShuffler([
@@ -436,11 +446,12 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var indefiniteArticle = function(word) {
-        var vowels = ["a", "e", "i", "o", "u"];
-        if (_(vowels).indexOf(word[0].toLowerCase()) > -1) {
-            return "An " + word;
-        }
-        return "A " + word;
+//        var vowels = ["a", "e", "i", "o", "u"];
+//        if (_(vowels).indexOf(word[0].toLowerCase()) > -1) {
+//            return "An " + word;
+//        }
+//        return "A " + word;
+        return word.unit ? "一" + word.unit + word : "一個" + word;
     };
 
     $.extend(KhanUtil, {
@@ -618,6 +629,17 @@ $.fn["word-problemsLoad"] = function() {
 
         animalStddevLifespan: function(i) {
             return animals.get(i - 1)[2];
+        },
+        
+        // return the unit for counting the noun (for Chinese) 
+        measureWord: function(noun) {
+        	if (typeof noun.measureWord === "string") {
+            	return noun.measureWord;
+        	} else if (typeof noun.measureWord === "object" && noun.measureWord.get){
+        		return noun.measureWord.get(0);
+        	} else {
+        		return "";
+        	}
         }
     });
 };
