@@ -227,26 +227,26 @@ $.fn["word-problemsLoad"] = function() {
     people = new IncrementalShuffler(people);
 
     var vehicles = new IncrementalShuffler([
-        "腳踏車",
-        "汽車",
-        "馬",
-        "機車",
-        "火車"
+        new Noun("腳踏車", {measureWord: new IncrementalShuffler(["台", "輛"])}),
+        new Noun("汽車", {measureWord: new IncrementalShuffler(["台", "輛"])}),
+        new Noun("馬", {measureWord: "隻"}),
+        new Noun("機車", {measureWord: new IncrementalShuffler(["台", "輛"])}),
+        new Noun("火車", {measureWord: new IncrementalShuffler(["台", "輛", "班"])})
     ]);
 
     var courses = new IncrementalShuffler([
-        "代數",
-        "化學",
-        "幾何學",
-        "歷史",
-        "物理",
-        "英文"
+        new Noun("代數", {measureWord: new IncrementalShuffler(["堂", "節"])}),
+        new Noun("化學", {measureWord: new IncrementalShuffler(["堂", "節"])}),
+        new Noun("幾何學", {measureWord: new IncrementalShuffler(["堂", "節"])}),
+        new Noun("歷史", {measureWord: new IncrementalShuffler(["堂", "節"])}),
+        new Noun("物理", {measureWord: new IncrementalShuffler(["堂", "節"])}),
+        new Noun("英文", {measureWord: new IncrementalShuffler(["堂", "節"])})
     ]);
 
     var exams = new IncrementalShuffler([
-        "考試", //（期末考）
-        "考試", //（月考）
-        "測驗" //（小考）
+        new Noun("考試", {measureWord: "次"}), //（期末考）
+        new Noun("考試", {measureWord: "次"}), //（月考）
+        new Noun("測驗", {measureWord: "次"}) //（小考）
     ]);
 
     var binops = new IncrementalShuffler([
