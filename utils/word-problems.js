@@ -126,33 +126,23 @@ $.extend(KhanUtil, {
                 var usePlural = (value !== 1);
 
                 // if no extra args, just add "s" (if plural)
-                if (arguments.length === 1) { // plural(NUMBER)
+                if (arguments.length === 1) {
                     return usePlural ? "" : ""; //"s" : ""
                 }
 
-                var measureWord = arg1.measureWord;
-            	if (typeof arg1.measureWord === "string") {
-            		measureWord = arg1.measureWord;
-            	} else if (typeof arg1.measureWord === "object" && arg1.measureWord.get){
-            		measureWord = arg1.measureWord.get(0);
-            	} else {
-            		measureWord = "";
-            	}
                 if (usePlural) {
-                	// 如果要用複數，且第三個參數（arg2）有值，則使用第三個參數當做複數型
-                    arg1 = arg2 || pluralizeWord(arg1);//plural(NUMBER, singular)或plural(NUMBER, singular, plural)
+                    arg1 = arg2 || pluralizeWord(arg1);
                 }
-//                return value + " " + arg1;
-                // add measureWord if available (for Chinese)
-                return measureWord ? value + " " + measureWord + arg1 : value + " " + arg1; // NOTE 在這邊加很有效果
+
+                return value + " " + arg1;
             } else if (typeof value === "string" || typeof value === "object") {
                 var plural = pluralizeWord(value);
-                if (typeof arg1 === "string" && arguments.length === 3) { // plural(singular, plural, NUMBER)
+                if ((typeof arg1 === "string" || typeof arg1 === "object") && arguments.length === 3) {
                     plural = arg1;
                     arg1 = arg2;
                 }
-                var usePlural = (arguments.length < 2 || (typeof arg1 === "number" && arg1 !== 1)); // plural(singular, NUMBER)或plural(singular)
-                return usePlural ? plural : value;
+                var usePlural = (arguments.length < 2 || (typeof arg1 === "number" && arg1 !== 1));
+                return usePlural ? plural.toString() : value.toString();
             }
         };
     })()
@@ -190,6 +180,19 @@ $.fn["word-problemsLoad"] = function() {
             // items in reverse order
             return array[array.length - i - 1];
         };
+    };
+    
+    var Noun = function(noun, properties) {
+    	// extend noun with some properties
+    	// new Noun("", {measureWord: new IncrementalShuffler(["", ""])})
+    	var nounObject = new String(noun);
+    	if (typeof properties === "object") {
+    		// extend properties, but restricted to known properties, e.g.: measureWord
+    		if (properties["measureWord"]) {
+    			nounObject["measureWord"] = properties["measureWord"];
+    		}
+    	}
+    	return nounObject;
     };
 
     var names = [
@@ -266,24 +269,25 @@ $.fn["word-problemsLoad"] = function() {
 
     var collections = new IncrementalShuffler([
         ["椅子", "排", "make做"], //（Make很多意思，不曉得在英文裡怎麼用？）
-        ["party favor派對", "bag包", "fill裝滿"],
+        ["彈珠", "袋", "fill裝滿"],
         ["軟糖", "堆", "make做"],
         ["書", "書架", "fill裝滿"],
+        ["資料夾", "疊", "fill裝滿"],
         ["餅乾", "盒", "fill裝滿"]
     ]);
 
     var stores = new IncrementalShuffler([
         {
             name: "文具",
-            items: new IncrementalShuffler(["原子筆", "鉛筆", "筆記本"])
+            items: new IncrementalShuffler(["原子筆", "立可白", "鉛筆", "筆記本"])
         },
         {
-            name: "五金",
-            items: new IncrementalShuffler(["鐵鎚", "釘子", "鋸子"])
+            name: "五金器材",
+            items: new IncrementalShuffler(["鐵鎚", "水桶", "釘子", "鋸子"])
         },
         {
             name: "食品",
-            items: new IncrementalShuffler(["香蕉", "loaf of bread麵包", "gallon of milk牛奶", "馬鈴薯"]) //（一條麵包，一加侖牛奶？）
+            items: new IncrementalShuffler(["香蕉", "三明治", "冰棒", "番薯", "loaf of bread麵包", "gallon of milk牛奶", "馬鈴薯"]) //（一條麵包，一加侖牛奶？）
         },
         {
             name: "禮品",
@@ -291,7 +295,7 @@ $.fn["word-problemsLoad"] = function() {
         },
         {
             name: "玩具",
-            items: new IncrementalShuffler(["泰迪熊", "電動玩具", "賽車", "洋娃娃"])
+            items: new IncrementalShuffler(["泰迪熊", "電動玩具", "魔術方塊", "賽車", "洋娃娃"])
         }
     ]);
 
@@ -309,23 +313,23 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var exercises = new IncrementalShuffler([
-        {singular:"伏地挺身", measureWord: new IncrementalShuffler(["個", "次", "下"]), toString:function(){return this.singular;}},
-        {singular:"仰臥起坐", measureWord: new IncrementalShuffler(["個", "次", "下"]), toString:function(){return this.singular;}},
-        {singular:"交互蹲跳", measureWord: new IncrementalShuffler(["個", "次", "下"]), toString:function(){return this.singular;}},
+        new Noun("伏地挺身", {measureWord: new IncrementalShuffler(["個", "次", "下"])}),
+        new Noun("仰臥起坐", {measureWord: new IncrementalShuffler(["個", "次", "下"])}),
+        new Noun("交互蹲跳", {measureWord: new IncrementalShuffler(["個", "次", "下"])})
     ]);
 
     var fruits = new IncrementalShuffler([
-        "蘋果",
-        "梨子",
-        "椰子",
-        "茄子",
-        "奇異果",
-        "檸檬",
-        "芒果",
-        "桃子",
-        "橘子",
-        "芭樂",
-        "西瓜"
+        new Noun("蘋果", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("梨子", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("椰子", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("茄子", {measureWord: new IncrementalShuffler(["個", "條"])}),
+        new Noun("奇異果", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("檸檬", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("芒果", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("桃子", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("橘子", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("芭樂", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])}),
+        new Noun("西瓜", {measureWord: new IncrementalShuffler(["個", "粒", "顆"])})
     ]);
 
     var deskItems = new IncrementalShuffler([
@@ -383,19 +387,19 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var clothes = new IncrementalShuffler([
-        "帽子",
-        "褲子",
-        "皮帶",
-        "項鍊",
-        "皮包",
-        "鞋子",
-        "襯衫",
-        "裙子",
-        "手錶",
-        "襪子",
-        "毛衣",
-        "領帶",
-        "洋裝"
+        new Noun("帽子", {measureWord: "頂"}),
+        new Noun("褲子", {measureWord: new IncrementalShuffler(["件", "條"])}),
+        new Noun("皮帶", {measureWord: "條"}),
+        new Noun("項鍊", {measureWord: "條"}),
+        new Noun("皮包", {measureWord: "個"}),
+        new Noun("鞋子", {measureWord: "雙"}),
+        new Noun("襯衫", {measureWord: "件"}),
+        new Noun("裙子", {measureWord: new IncrementalShuffler(["件", "條"])}),
+        new Noun("手錶", {measureWord: new IncrementalShuffler(["只", "個"])}),
+        new Noun("襪子", {measureWord: "雙"}),
+        new Noun("毛衣", {measureWord: "件"}),
+        new Noun("領帶", {measureWord: "條"}),
+        new Noun("洋裝", {measureWord: new IncrementalShuffler(["件", "套"])}),
     ]);
 
     var sides = new IncrementalShuffler([
@@ -429,8 +433,20 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var farmers = new IncrementalShuffler([
-        {farmer: "農夫", crops: new IncrementalShuffler(["番茄", "馬鈴薯", "胡蘿蔔", "豆子", "稻子"]), field: "農地"},
-        {farmer: "園丁", crops: new IncrementalShuffler(["玫瑰花", "鬱金香", "菊花", "向日葵", "百合花"]), field: "花園"}
+        {farmer: "農夫", crops: new IncrementalShuffler([
+                                                       new Noun("番茄", {measureWord: new IncrementalShuffler(["棵", "顆", "粒", "個", "株"])}),
+                                                       new Noun("馬鈴薯", {measureWord: new IncrementalShuffler(["棵", "顆", "粒", "個", "株"])}),
+                                                       new Noun("胡蘿蔔", {measureWord: new IncrementalShuffler(["棵", "顆", "粒", "個", "株"])}),
+                                                       new Noun("豆子", {measureWord: new IncrementalShuffler(["棵", "顆", "粒", "個", "株"])}),
+                                                       new Noun("稻子", {measureWord: new IncrementalShuffler(["棵", "顆", "粒", "個", "株"])})
+                                                       ]), field: "農地"},
+        {farmer: "園丁", crops: new IncrementalShuffler([
+                                                       new Noun("玫瑰花", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
+                                                       new Noun("鬱金香", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
+                                                       new Noun("菊花", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
+                                                       new Noun("向日葵", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
+                                                       new Noun("百合花", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])})
+                                                       ]), field: "花園"}
     ]);
 
     var distances = new IncrementalShuffler([
@@ -446,12 +462,11 @@ $.fn["word-problemsLoad"] = function() {
     ]);
 
     var indefiniteArticle = function(word) {
-//        var vowels = ["a", "e", "i", "o", "u"];
-//        if (_(vowels).indexOf(word[0].toLowerCase()) > -1) {
-//            return "An " + word;
-//        }
-//        return "A " + word;
-        return word.unit ? "一" + word.unit + word : "一個" + word;
+        var vowels = ["a", "e", "i", "o", "u"];
+        if (_(vowels).indexOf(word[0].toLowerCase()) > -1) {
+            return "An " + word;
+        }
+        return "A " + word;
     };
 
     $.extend(KhanUtil, {
@@ -631,14 +646,31 @@ $.fn["word-problemsLoad"] = function() {
             return animals.get(i - 1)[2];
         },
         
-        // return the unit for counting the noun (for Chinese) 
-        measureWord: function(noun) {
-        	if (typeof noun.measureWord === "string") {
-            	return noun.measureWord;
-        	} else if (typeof noun.measureWord === "object" && noun.measureWord.get){
-        		return noun.measureWord.get(0);
-        	} else {
+        // measure word helper.(for Chinese)  There are two signatures
+        // - measureWord(NOUN): return measure word of NOUN if available
+        // - measureWord(NUMBER, NOUN): return "NUMBER measureWord NOUN", use default measure word if not available
+        measureWord: function measureWord(value, arg1) {
+        	// get measure word of noun if available
+        	var getMeasureWord = function(noun) {
+        		// return empty string if noun is just null or undefined
+        		if (!noun) {
+        			return "";
+        		}
+        		
+            	if (typeof noun.measureWord === "string") {
+                	return noun.measureWord;
+            	} else if (typeof noun.measureWord === "object" && noun.measureWord.get){
+            		return noun.measureWord.get(0);
+            	}
+            	
+            	// return empty string if no match
         		return "";
+        	};
+        	
+        	if (typeof value === "number") {
+        		return arg1 ? value + " " + getMeasureWord(arg1) + arg1 : value.toString();
+        	} else {
+        		return getMeasureWord(value);
         	}
         }
     });
