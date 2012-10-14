@@ -2,7 +2,7 @@
 <html data-require="math math-format graphie time word-problems">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Telling time</title>
+    <title>分辨時間（一）</title>
     <script src="../khan-exercise.js"></script>
     <style type="text/css">
         #answer_area .short input[type=text] {
@@ -22,7 +22,7 @@
     <div class="problems">
         <div id="analog">
             <div class="question">
-                <p>What time is it?</p>
+                <p>請問鐘面上的時刻是幾點幾分？</p>
                 <div class="graphie" id="pie" style="float: left;">
                     init({ range: [ [-4, 4 ], [ -4, 4 ] ], scale: 25 });
                     clock = addAnalogClock({ hour: HOUR, minute: MINUTE, minuteTicks: 0 });
@@ -34,8 +34,8 @@
                 <div style="clear: both;"></div>
             </div>
             <div class="solution" data-type="multiple">
-                <p class="short">The time is <span class="sol"><var>HOUR</var></span> : <span class="sol"><var>NICE_MINUTE</var></span> <var>AM_PM</var></p>
-                <p class="example">a 12-hour time in hours and minutes</p>
+                <p class="short">這個時刻是 <span class="sol"><var>HOUR</var></span> : <span class="sol"><var>NICE_MINUTE</var></span></p>
+                <p class="example">用小時與分鐘表示的12時制的時刻</p>
             </div>
 
             <div class="hints">
@@ -46,12 +46,12 @@
                             "\\Huge{\\phantom{00}:\\phantom{00}}",
                             "center" );
                     </div>
-                    <p>The small hand is for the hour, and the big hand is for the minutes.</p>
+                    <p>短針代表小時，所以短針又叫做時針；長針代表分鐘，所以長針又叫做分針。</p>
                 </div>
                 <div>
-                    <p data-if="MINUTE === 0"> The hour hand is pointing at <code><var>HOUR</var></code>, so the hour is <code><var>HOUR</var></code>.</p>
-                    <p data-else-if="MINUTE > 10  && MINUTE < 45">The hour hand is between <code><var>HOUR</var></code> and <code><var>HOUR + 1 === 13 ? 1 : HOUR + 1</var></code>, so the hour is <code><var>HOUR</var></code>.</p>
-                    <p data-else>The hour hand is close to but hasn't passed <code><var>HOUR + 1 === 13 ? 1 : HOUR + 1</var></code>, so the hour is still <code><var>HOUR</var></code>.</p>
+                    <p data-if="MINUTE === 0">時針指向 <code><var>HOUR</var></code>，所以是 <code><var>HOUR</var></code> 點。</p>
+                    <p data-else-if="MINUTE > 10  && MINUTE < 45">時針指向 <code><var>HOUR</var></code> 與 <code><var>HOUR + 1 === 13 ? 1 : HOUR + 1</var></code> 中間，所以是 <code><var>HOUR</var></code> 點。</p>
+                    <p data-else>時針很靠近 <code><var>HOUR + 1 === 13 ? 1 : HOUR + 1</var></code> ，但是還沒有超過 <code><var>HOUR + 1 === 13 ? 1 : HOUR + 1</var></code> ，所以還是 <code><var>HOUR</var></code> 點。</p>
                     <div class="graphie" data-update="digital">
                         graph.time.remove();
                         var padding = HOUR &lt; 10 ? "\\phantom{0}" : "";
@@ -61,11 +61,11 @@
                     </div>
                 </div>
                 <div>
-                    <p>The minute hand starts pointing straight up for <code>0</code> minutes, and makes a complete circle in <code>1</code> hour.</p>
-                    <p>For each quarter of the circle that the minute hand passes, add <code>15</code> minutes.</p>
+                    <p>分針從指向正上方開始，代表從 <code>0</code> 分鐘開始，會在一個小時內畫出一個完整的圓形。</p>
+                    <p>分針每過 4 分之 1 個圓，就要加上 <code>15</code> 分鐘。</p>
                 </div>
                 <div>
-                    <p>The minute hand has passed <var>plural( MINUTE / 15, "fourth" )</var> of a circle, which represents <span data-if="MINUTE === 0"><code>0</code></span><span data-else><code><var>MINUTE</var></code></span> minutes.</p>
+                    <p>這個分針<span data-if="MINUTE === 0">指向正上方</span><span data-else>已經經過了 4 分之 <var>MINUTE / 15</var> 個圓</span>，也就是代表 <span data-if="MINUTE === 0"><code>0</code></span><span data-else><code><var>MINUTE</var></code></span> 分鐘。</p>
                     <div class="graphie" data-update="digital">
                         graph.time.remove();
                         var padding = MINUTE &lt; 10 ? "0" : "";
@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-                <p>The time is <code><var>HOUR</var></code>:<code><var>NICE_MINUTE</var></code>.</p>
+                <p>所以這個時刻是 <code><var>HOUR</var></code>:<code><var>NICE_MINUTE</var></code> 。</p>
             </div>
         </div>
     </div>
