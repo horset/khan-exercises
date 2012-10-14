@@ -469,11 +469,11 @@ $.fn["word-problemsLoad"] = function() {
                                                        new Noun("稻子", {measureWord: new IncrementalShuffler(["棵", "顆", "粒", "個", "株"])})
                                                        ]), field: "農地"},
         {farmer: "園丁", crops: new IncrementalShuffler([
-                                                       new Noun("玫瑰花", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
-                                                       new Noun("鬱金香", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
-                                                       new Noun("菊花", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
-                                                       new Noun("向日葵", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])}),
-                                                       new Noun("百合花", {measureWord: new IncrementalShuffler(["朵", "棵", "株"])})
+                                                       new Noun("玫瑰花", {measureWord: new IncrementalShuffler(["朵", "枝", "株"])}),
+                                                       new Noun("鬱金香", {measureWord: new IncrementalShuffler(["朵", "枝", "株"])}),
+                                                       new Noun("菊花", {measureWord: new IncrementalShuffler(["朵", "枝", "株"])}),
+                                                       new Noun("向日葵", {measureWord: new IncrementalShuffler(["朵", "枝", "株"])}),
+                                                       new Noun("百合花", {measureWord: new IncrementalShuffler(["朵", "枝", "株"])})
                                                        ]), field: "花園"}
     ]);
 
