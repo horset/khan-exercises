@@ -2,7 +2,7 @@
 <html data-require="math word-problems">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Arithmetic word problems 1</title>
+    <title>算數應用題1</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -17,282 +17,270 @@
 
             <div id="take-away-result">
                 <p class="problem">
-                    Before the previous stop there <var>plural('was', TOTAL)</var> <var>plural(TOTAL, 'person')</var> riding on a train.
-                    <var>plural(NUM2, 'person')</var> ended up getting off at the stop.
+                    在抵達這個車站之前，有 <var>TOTAL</var> 個人坐在火車上，而剛才已經有 <var>NUM2</var> 個人在這個車站下車。
                 </p>
                 <p class="question">
-                    How many people are riding the train now?
+                    請問現在有多少人坐在這輛火車上？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> people
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> 個人
                 </div>
                 <div class="hints">
                     <p>
-                    The number riding the train now is the difference between the number who were riding and the number who got off at the previous stop.
+                    現在坐在這輛火車上的人數，就是抵達這個車站之前的坐車人數與在這站下車的人數之間的差。
                     </p>
                     <p>
-                    The difference is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('person')</var> on the train.
+                    這個差就是 <code><var>TOTAL</var> - <var>NUM2</var></code> 個人坐在火車上。
                     </p>
                     <p>
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('person', NUM1)</var> <var>plural('is', NUM1)</var> on the train.
+                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> 個人坐在火車上。
                     </p>
                 </div>
             </div>
 
             <div id="take-away-start">
                 <p class="problem">
-                    There <var>plural('is', NUM1)</var> <var>plural(NUM1, 'person')</var> riding on a train.
-                    At the previous stop, <var>plural(NUM2, 'person')</var> got off.
+                    現在有 <var>NUM1</var> 個人正坐在一輛火車上，而有 <var>NUM2</var> 個人已經在上一個車站下車。
                 </p>
                 <p class="question">
-                    How many people were riding the train before the stop?
+                    請問在抵達上一個車站之前，有多少人坐在火車上？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> people
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> 個人
                 </div>
                 <div class="hints">
                     <p>
-                    The number riding the train before the stop is the sum of the number who are riding now and the number who got off at the previous stop.
+                    在抵達上一個車站之前坐在火車上的人數，是現在正在車上的人數與在上一站下車的人數的和。
                     </p>
                     <p>
-                    The sum is <code><var>NUM1</var> + <var>NUM2</var></code> <var>plural('person')</var> on the train.
+                    這個和是 <code><var>NUM1</var> + <var>NUM2</var></code> 個人坐在火車上。
                     </p>
                     <p>
-                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> <var>plural('person')</var> <var>plural('is', TOTAL)</var> on the train.
+                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> 個人坐在火車上。
                     </p>
                 </div>
             </div>
 
             <div id="take-away-change">
                 <p class="problem">
-                    There <var>plural('was', TOTAL)</var> <var>plural(TOTAL, 'person')</var> riding on a train before it stopped and some number of people got off.
-                    Now there <var>plural('is', NUM2)</var> <var>plural(NUM2, 'person')</var> riding on the train.
+                    在火車抵達這個車站讓一些人下車之前，有 <var>TOTAL</var> 個人坐在火車上。現在火車已經離開這個車站了，有 <var>NUM2</var> 個人正坐在火車上。
                 </p>
                 <p class="question">
-                    How many people got off the train at the stop?
+                    請問有多少人在這個車站下車？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> people
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> 個人
                 </div>
                 <div class="hints">
                     <p>
-                    The number of people who got off is the difference between the number who were riding before and the number who are riding now.
+                    下車的人數是火車抵達這個車站之前的人數與現在正坐在火車上的人數之間的差。
                     </p>
                     <p>
-                    The difference is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('person')</var>.
+                    這個差是 <code><var>TOTAL</var> - <var>NUM2</var></code> 個人。
                     </p>
                     <p>
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('person', NUM1)</var> got off.
+                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> 個人在這個車站下車。
                     </p>
                 </div>
             </div>
 
             <div id="put-together">
                 <p class="problem">
-                    There <var>plural('is', NUM1)</var> <var>plural(NUM1, 'tree')</var> on the right bank of a river and <var>plural(NUM2, 'tree')</var> on the left bank.
+                    有 <var>NUM1</var> 棵樹在河流的右邊的岸上，而有 <var>NUM2</var> 棵樹在左邊的岸上。
                 </p>
                 <p class="question">
-                    How many trees are on the banks of the river?
+                    請問在河流的兩邊岸上總共有多少棵樹？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> trees
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> 棵樹
                 </div>
                 <div class="hints">
                     <p>
-                    The total number of trees on the two banks of the river is the sum of the number of trees on the left bank and the number of trees on the right bank.
+                    河流的兩邊岸上的樹的總數量是左岸上樹的數量與右岸上樹的數量的總和。
                     </p>
                     <p>
-                    The sum is <code><var>NUM1</var> + <var>NUM2</var></code> <var>plural('tree')</var>.
+                    這個和就是 <code><var>NUM1</var> + <var>NUM2</var></code> 棵樹。
                     </p>
                     <p>
-                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> <var>plural('tree')</var>.
+                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> 棵樹。
                     </p>
                 </div>
             </div>
 
             <div id="take-apart">
                 <p class="problem">
-                    There <var>plural('is', TOTAL)</var> <var>plural(TOTAL, 'tree')</var> on the banks of the river. The <var>side(1)</var> bank has <var>NUM2</var> of them.
+                    總共有 <var>TOTAL</var> 棵樹種在河流的兩岸上， 而其中的 <var>NUM2</var> 棵樹是種在<var>side(1)</var>岸上。
                 </p>
                 <p class="question">
-                    How many trees are on the <var>side(2)</var> bank of the river?
+                    請問有多少棵樹在河流的<var>side(2)</var>岸上？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> trees
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> 棵樹
                 </div>
                 <div class="hints">
                     <p>
-                    The number of trees on the <var>side(2)</var> bank of the river is the difference between the number of trees on both banks of the river and the number of trees on the <var>side(1)</var> bank.
+                    在河流<var>side(2)</var>岸的樹木數量，是兩岸的樹木總數與<var>side(1)</var>岸樹木數量之間的差。
                     </p>
                     <p>
-                    The difference is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('tree')</var>.
+                    這個差是<code><var>TOTAL</var> - <var>NUM2</var></code> 棵樹。
                     </p>
                     <p>
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('tree', NUM1)</var>.
+                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> 棵樹。
                     </p>
                 </div>
             </div>
 
             <div id="add-start">
                 <p class="problem">
-                    Some cars were parked in the <var>store(1)</var> store parking lot.
-                    <var>NUM2</var> more <var>plural('car')</var> <var>plural('parks', 'park', NUM2)</var> at the <var>store(1)</var> store,
-                    and now there <var>plural('is', TOTAL)</var> <var>plural(TOTAL, 'car')</var> in the parking lot.
+                    原本已經有些車停在<var>store(1)</var>賣場的停車場中，後來又有 <var>NUM2</var> 台車停進<var>store(1)</var>賣場中，而現在總共有 <var>TOTAL</var> 台車停在停車場中。
                 </p>
                 <p class="question">
-                    How many cars were parked at the <var>store(1)</var> store at the beginning?
+                    請問原本有多少車輛停在<var>store(1)</var>賣場中？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> cars
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> 台車
                 </div>
                 <div class="hints">
                     <p>
-                    The number of cars parked at the store at the beginning is the difference of the number parked now and the number that came and parked earlier.
+                    原本停在賣場中的車輛數量，是現在停在賣場的車輛總數與後來停進賣場的車輛數量之間的差。
                     </p>
                     <p>
-                    The difference is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('car')</var>.
+                    這個差是 <code><var>TOTAL</var> - <var>NUM2</var></code> 台車。
                     </p>
                     <p>
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('car', NUM1)</var>.
+                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> 台車。
                     </p>
                 </div>
             </div>
 
             <div id="add-change">
                 <p class="problem">
-                    Initially there <var>plural( 'was', NUM2 )</var> <var>plural( NUM2, 'car' )</var> parked in the <var>store(1)</var> store parking lot.
-                    During the following <var>randRange( 2, 3 )</var> hours some more cars parked at the <var>store(1)</var> store, and now there <var>plural('is', TOTAL)</var> <var>plural(TOTAL, 'car')</var> in the parking lot. No cars left the parking lot during this time.
+                    原本有 <var>NUM2</var> 台車停在<var>store(1)</var>賣場的停車場，在後來的 <var>randRange( 2, 3 )</var> 小時內，有更多車子停到<var>store(1)</var>賣場中，但沒有任何車輛在這段時間離開，而現在則是有 <var>TOTAL</var> 台車在停車場中。
                 </p>
                 <p class="question">
-                How many cars parked in the <var>store( 1 )</var> store parking lot after the initial <var>plural( NUM2, 'car' )</var>?
+                請問在原本的 <var>NUM2</var> 台車之後，有多少車輛停進來<var>store( 1 )</var>賣場的停車場中？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> cars
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> 台車
                 </div>
                 <div class="hints">
-                    <p>The number of cars that came and parked at the store is the difference between the number that were parked earlier and the number that are parked now.</p>
+                    <p>後來停進賣場中的車輛總數是原本停放的車輛數量與現在正停在賣場中的車輛總數之間的差。</p>
                     <p>
-                    The difference is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('car')</var>.
+                    這個差是 <code><var>TOTAL</var> - <var>NUM2</var></code> 台車。
                     </p>
                     <p>
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('car', NUM1)</var>.
+                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> 台車。
                     </p>
                 </div>
             </div>
 
             <div id="add-result">
                 <p class="problem">
-                    <var>plural(NUM1, 'car')</var> <var>plural('was', NUM1)</var> in the <var>store(1)</var> store parking lot.
-                    <var>NUM2</var> more <var>plural('car', NUM2)</var> <var>plural('parks', 'park', NUM2)</var> at the <var>store(1)</var> store.
+                    原本已經有 <var>NUM1</var> 台車停在<var>store(1)</var>賣場的停車場裡面，剛剛又有 <var>NUM2</var> 台車停進來<var>store(1)</var>賣場的停車場。
                 </p>
                 <p class="question">
-                    How many cars are in the parking lot now?
+                    請問現在有多少台車停在停車場裡面？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> cars
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> 台車
                 </div>
                 <div class="hints">
                     <p>
-                    The number of cars that are parked now is the sum of the number that were parked earlier and the number that came to park.
+                    現在停車的數量是原本已經停放的數量與剛剛停進來的車子數量的總和。
                     </p>
                     <p>
-                    The sum is <code><var>NUM1</var> + <var>NUM2</var></code> <var>plural('car')</var>.
+                    這個總合是 <code><var>NUM1</var> + <var>NUM2</var></code> 台車。
                     </p>
                     <p>
-                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> <var>plural('car')</var>.
+                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> 台車。
                     </p>
                 </div>
             </div>
 
             <div id="compare-diff-more">
                 <p class="problem">
-                    <var>person(1)</var> did <var>plural(TOTAL, exercise(1))</var> <var>timeofday(1)</var>.
-                    <var>person(2)</var> did <var>plural(NUM2, exercise(1))</var> <var>timeofday(2)</var>.
+                    <var>person(1)</var>在<var>timeofday(1)</var>的時候做了 <var>measureWord(TOTAL, exercise(1))</var>，而<var>person(2)</var>則是在<var>timeofday(2)</var>的時候做了 <var>measureWord(NUM2, exercise(1))</var>。
                 </p>
                 <p class="question">
-                    How many more <var>plural(exercise(1))</var> did <var>person(1)</var> do than <var>person(2)</var>?
+                    請問<var>person(1)</var>比<var>person(2)</var>多做多少<var>measureWord(exercise(1))</var><var>exercise(1)</var>？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> <var>plural(exercise(1))</var>
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM1</var></span> <var>measureWord(exercise(1))</var><var>exercise(1)</var>
                 </div>
                 <div class="hints">
                     <p>
-                    Find the difference between <var>person(1)</var>'s <var>plural(exercise(1))</var> and <var>person(2)</var>'s <var>plural(exercise(1))</var>.
+                    需要了解<var>person(1)</var>做<var>exercise(1)</var>的數量與<var>person(2)</var>做<var>exercise(1)</var>的數量之間的差。
                     </p>
                     <p>
-                    The difference is <code><var>TOTAL</var> - <var>NUM2</var></code>.
+                    兩者之間的差為 <code><var>TOTAL</var> - <var>NUM2</var></code> 。
                     </p>
                     <p>
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code>.
+                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> 。
                     </p>
                 </div>
             </div>
 
             <div id="compare-diff-less"  data-type="compare-diff-more">
                 <p class="question">
-                    How many fewer <var>plural(exercise(1))</var> did <var>person(2)</var> do than <var>person(1)</var>?
+                    請問<var>person(2)</var>比<var>person(1)</var>少做幾<var>measureWord(exercise(1))</var>？
                 </p>
             </div>
 
             <div id="compare-bigger-more">
                 <p class="problem">
-                    <var>person(1)</var> did <var>NUM1</var> more <var>plural(exercise(1), NUM1)</var> than <var>person(2)</var> <var>timeofday(1)</var>.
-                    <var>person(2)</var> did <var>plural(NUM2, exercise(1))</var>.
+                    <var>person(1)</var>在<var>timeofday(1)</var>的時候比<var>person(2)</var>多做了 <var>measureWord(NUM1, exercise(1))</var>，而<var>person(2)</var>則是做了 <var>measureWord(NUM2, exercise(1))</var>。
                 </p>
                 <p class="question">
-                    How many <var>plural(exercise(1))</var> did <var>person(1)</var> do?
+                    請問<var>person(1)</var>做了多少<var>measureWord(exercise(1))</var><var>exercise(1)</var>？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> <var>plural(exercise(1))</var>
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>TOTAL</var></span> <var>measureWord(exercise(1))</var><var>exercise(1)</var>
                 </div>
                 <div class="hints">
                     <p>
-                    <var>person(2)</var> did <var>plural(NUM2, exercise(1))</var>, and <var>person(1)</var> did <var>NUM1</var> more than that, so find the sum.
+                    <var>person(2)</var>做了 <var>measureWord(NUM2, exercise(1))</var>，而<var>person(1)</var>做的次數則更多了 <var>NUM1</var> 次，所以我們要找出這兩個數量的總和。
                     </p>
                     <p>
-                    The sum is <code><var>NUM2</var> + <var>NUM1</var></code> <var>plural(exercise(1))</var>.
+                    這個總和是 <code><var>NUM2</var> + <var>NUM1</var></code> <var>measureWord(exercise(1))</var><var>exercise(1)</var> 。
                     </p>
                     <p>
-                    <var>He(1)</var> did <code><var>NUM2</var> + <var>NUM1</var> = <var>TOTAL</var></code> <var>plural(exercise(1))</var>.
+                    <var>He(1)</var>做了 <code><var>NUM2</var> + <var>NUM1</var> = <var>TOTAL</var></code> <var>measureWord(exercise(1))</var><var>exercise(1)</var>。
                     </p>
                 </div>
             </div>
 
             <div id="compare-bigger-less" data-type="compare-bigger-more">
                 <p class="problem">
-                    <var>person(2)</var> did <var>NUM1</var> fewer <var>plural(exercise(1), NUM1)</var> than <var>person(1)</var> <var>timeofday(1)</var>.
-                    <var>person(2)</var> did <var>plural(NUM2, exercise(1))</var>.
+                    <var>person(2)</var>在<var>timeofday(1)</var>的時候比<var>person(1)</var>少做了 <var>measureWord(NUM1, exercise(1))</var>，而<var>person(2)</var>則是做了 <var>measureWord(NUM2, exercise(1))</var>。
                 </p>
             </div>
 
             <div id="compare-smaller-more">
                 <p class="problem">
-                    <var>person(1)</var> did <var>NUM1</var> more <var>plural(exercise(1), NUM1)</var> than <var>person(2)</var> <var>timeofday(1)</var>.
-                    <var>person(1)</var> did <var>plural(TOTAL, exercise(1))</var>.
+                    <var>person(1)</var>在<var>timeofday(1)</var>的時候比<var>person(2)</var>多做了 <var>measureWord(NUM1, exercise(1))</var>，而<var>person(1)</var>則是做了 <var>measureWord(TOTAL, exercise(1))</var>。
                 </p>
                 <p class="question">
-                    How many <var>plural(exercise(1))</var> did <var>person(2)</var> do?
+                    請問<var>person(2)</var>做了多少<var>measureWord(exercise(1))</var><var>exercise(1)</var>？
                 </p>
                 <div class="solution" data-type="multiple">
-                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM2</var></span> <var>plural(exercise(1))</var>
+                    <span style="padding-right: 5px" class="sol" data-forms="integer"><var>NUM2</var></span> <var>measureWord(exercise(1))</var><var>exercise(1)</var>
                 </div>
                 <div class="hints">
                     <p>
-                    <var>person(1)</var> did <var>plural(TOTAL, exercise(1))</var>, and <var>person(2)</var> did <var>NUM1</var> fewer than that, so find the difference.
+                    <var>person(1)</var>做了 <var>TOTAL</var> <var>measureWord(exercise(1))</var><var>exercise(1)</var>，而<var>person(2)</var>則是比<var>person(1)</var>少做 <var>measureWord(NUM1, exercise(1))</var>，所以我們要了解這兩個數量的差。
                     </p>
                     <p>
-                    The difference is <code><var>TOTAL</var> - <var>NUM1</var></code> <var>plural(exercise(1))</var>.
+                    這個差是 <code><var>TOTAL</var> - <var>NUM1</var></code> <var>measureWord(exercise(1))</var><var>exercise(1)</var>。
                     </p>
                     <p>
-                    <var>He(1)</var> did <code><var>TOTAL</var> - <var>NUM1</var> = <var>NUM2</var></code> <var>plural(exercise(1), NUM2)</var>.
+                    <var>He(1)</var>做了 <code><var>TOTAL</var> - <var>NUM1</var> = <var>NUM2</var></code> <var>measureWord(exercise(1))</var><var>exercise(1)</var>。
                     </p>
                 </div>
             </div>
 
             <div id="compare-smaller-fewer" data-type="compare-smaller-more">
                 <p class="problem">
-                    <var>person(2)</var> did <var>NUM1</var> fewer <var>plural(exercise(1), NUM1)</var> than <var>person(1)</var> <var>timeofday(1)</var>.
-                    <var>person(1)</var> did <var>plural(TOTAL, exercise(1))</var>.
+                    <var>person(2)</var>在<var>timeofday(1)</var>的時候比<var>person(1)</var>少做了 <var>measureWord(NUM1, exercise(1))</var>，<var>person(1)</var>則是做了 <var>measureWord(TOTAL, exercise(1))</var>。
                 </p>
             </div>
 
